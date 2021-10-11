@@ -1,0 +1,249 @@
+/**
+ * @license
+ *
+ * Font Family: Bevellier
+ * Designed by: Arya Purohit, Barbara Bigosinska
+ * URL: https://www.fontshare.com/fonts/bevellier
+ * © 2021 Indian Type Foundry
+ *
+ * Font Styles:
+ * Bevellier Variable(Variable font)
+ * Bevellier Variable Italic(Variable font)
+ * Bevellier Thin
+ * Bevellier Thin Italic
+ * Bevellier Extralight
+ * Bevellier Extralight Italic
+ * Bevellier Light
+ * Bevellier Light Italic
+ * Bevellier Regular
+ * Bevellier Italic
+ * Bevellier Medium
+ * Bevellier Medium Italic
+ * Bevellier Semibold
+ * Bevellier Semibold Italic
+ * Bevellier Bold
+ * Bevellier Bold Italic
+ * Bevellier Black
+ * Bevellier Black Italic
+ *
+*/
+
+
+/**
+* This is a variable font
+* You can controll variable axes as shown below:
+* font-variation-settings: 'wght' 100.0;
+*
+* available axes:
+
+* 'wght' (range from 100.0 to 900.0)
+
+*/
+
+@font-face {
+  font-family: 'Bevellier-Variable';
+  src: url('../fonts/Bevellier-Variable.woff2') format('woff2'),
+       url('../fonts/Bevellier-Variable.woff') format('woff'),
+       url('../fonts/Bevellier-Variable.ttf') format('truetype');
+       font-weight: 100 900;
+       font-display: swap;
+       font-style: normal;
+}
+
+
+/**
+* This is a variable font
+* You can controll variable axes as shown below:
+* font-variation-settings: 'wght' 100.0;
+*
+* available axes:
+
+* 'wght' (range from 100.0 to 900.0)
+
+*/
+
+@font-face {
+  font-family: 'Bevellier-VariableItalic';
+  src: url('../fonts/Bevellier-VariableItalic.woff2') format('woff2'),
+       url('../fonts/Bevellier-VariableItalic.woff') format('woff'),
+       url('../fonts/Bevellier-VariableItalic.ttf') format('truetype');
+       font-weight: 100 900;
+       font-display: swap;
+       font-style: italic;
+}
+
+
+@font-face {
+  font-family: 'Bevellier-Thin';
+  src: url('../fonts/Bevellier-Thin.woff2') format('woff2'),
+       url('../fonts/Bevellier-Thin.woff') format('woff'),
+       url('../fonts/Bevellier-Thin.ttf') format('truetype');
+       font-weight: 100;
+       font-display: swap;
+       font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Bevellier-ThinItalic';
+  src: url('../fonts/Bevellier-ThinItalic.woff2') format('woff2'),
+       url('../fonts/Bevellier-ThinItalic.woff') format('woff'),
+       url('../fonts/Bevellier-ThinItalic.ttf') format('truetype');
+       font-weight: 100;
+       font-display: swap;
+       font-style: italic;
+}
+
+
+@font-face {
+  font-family: 'Bevellier-Extralight';
+  src: url('../fonts/Bevellier-Extralight.woff2') format('woff2'),
+       url('../fonts/Bevellier-Extralight.woff') format('woff'),
+       url('../fonts/Bevellier-Extralight.ttf') format('truetype');
+       font-weight: 200;
+       font-display: swap;
+       font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Bevellier-ExtralightItalic';
+  src: url('../fonts/Bevellier-ExtralightItalic.woff2') format('woff2'),
+       url('../fonts/Bevellier-ExtralightItalic.woff') format('woff'),
+       url('../fonts/Bevellier-ExtralightItalic.ttf') format('truetype');
+       font-weight: 200;
+       font-display: swap;
+       font-style: italic;
+}
+
+
+@font-face {
+  font-family: 'Bevellier-Light';
+  src: url('../fonts/Bevellier-Light.woff2') format('woff2'),
+       url('../fonts/Bevellier-Light.woff') format('woff'),
+       url('../fonts/Bevellier-Light.ttf') format('truetype');
+       font-weight: 300;
+       font-display: swap;
+       font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Bevellier-LightItalic';
+  src: url('../fonts/Bevellier-LightItalic.woff2') format('woff2'),
+       url('../fonts/Bevellier-LightItalic.woff') format('woff'),
+       url('../fonts/Bevellier-LightItalic.ttf') format('truetype');
+       font-weight: 300;
+       font-display: swap;
+       font-style: italic;
+}
+
+
+@font-face {
+  font-family: 'Bevellier-Regular';
+  src: url('../fonts/Bevellier-Regular.woff2') format('woff2'),
+       url('../fonts/Bevellier-Regular.woff') format('woff'),
+       url('../fonts/Bevellier-Regular.ttf') format('truetype');
+       font-weight: 400;
+       font-display: swap;
+       font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Bevellier-Italic';
+  src: url('../fonts/Bevellier-Italic.woff2') format('woff2'),
+       url('../fonts/Bevellier-Italic.woff') format('woff'),
+       url('../fonts/Bevellier-Italic.ttf') format('truetype');
+       font-weight: 400;
+       font-display: swap;
+       font-style: italic;
+}
+
+
+@font-face {
+  font-family: 'Bevellier-Medium';
+  src: url('../fonts/Bevellier-Medium.woff2') format('woff2'),
+       url('../fonts/Bevellier-Medium.woff') format('woff'),
+       url('../fonts/Bevellier-Medium.ttf') format('truetype');
+       font-weight: 500;
+       font-display: swap;
+       font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Bevellier-MediumItalic';
+  src: url('../fonts/Bevellier-MediumItalic.woff2') format('woff2'),
+       url('../fonts/Bevellier-MediumItalic.woff') format('woff'),
+       url('../fonts/Bevellier-MediumItalic.ttf') format('truetype');
+       font-weight: 500;
+       font-display: swap;
+       font-style: italic;
+}
+
+
+@font-face {
+  font-family: 'Bevellier-Semibold';
+  src: url('../fonts/Bevellier-Semibold.woff2') format('woff2'),
+       url('../fonts/Bevellier-Semibold.woff') format('woff'),
+       url('../fonts/Bevellier-Semibold.ttf') format('truetype');
+       font-weight: 600;
+       font-display: swap;
+       font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Bevellier-SemiboldItalic';
+  src: url('../fonts/Bevellier-SemiboldItalic.woff2') format('woff2'),
+       url('../fonts/Bevellier-SemiboldItalic.woff') format('woff'),
+       url('../fonts/Bevellier-SemiboldItalic.ttf') format('truetype');
+       font-weight: 600;
+       font-display: swap;
+       font-style: italic;
+}
+
+
+@font-face {
+  font-family: 'Bevellier-Bold';
+  src: url('../fonts/Bevellier-Bold.woff2') format('woff2'),
+       url('../fonts/Bevellier-Bold.woff') format('woff'),
+       url('../fonts/Bevellier-Bold.ttf') format('truetype');
+       font-weight: 700;
+       font-display: swap;
+       font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Bevellier-BoldItalic';
+  src: url('../fonts/Bevellier-BoldItalic.woff2') format('woff2'),
+       url('../fonts/Bevellier-BoldItalic.woff') format('woff'),
+       url('../fonts/Bevellier-BoldItalic.ttf') format('truetype');
+       font-weight: 700;
+       font-display: swap;
+       font-style: italic;
+}
+
+
+@font-face {
+  font-family: 'Bevellier-Black';
+  src: url('../fonts/Bevellier-Black.woff2') format('woff2'),
+       url('../fonts/Bevellier-Black.woff') format('woff'),
+       url('../fonts/Bevellier-Black.ttf') format('truetype');
+       font-weight: 900;
+       font-display: swap;
+       font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Bevellier-BlackItalic';
+  src: url('../fonts/Bevellier-BlackItalic.woff2') format('woff2'),
+       url('../fonts/Bevellier-BlackItalic.woff') format('woff'),
+       url('../fonts/Bevellier-BlackItalic.ttf') format('truetype');
+       font-weight: 900;
+       font-display: swap;
+       font-style: italic;
+}

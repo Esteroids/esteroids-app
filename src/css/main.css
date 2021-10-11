@@ -1,0 +1,467 @@
+body {
+    position:  relative;
+    font-family: Bevellier-Regular;
+
+}
+
+/* Background classes */
+.bg-top {
+    z-index: -2;
+
+    position: absolute;
+    top:  0px;;
+    width: 100%;
+    height: 100%;
+
+    background-image: url("../images/bg_top.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: top right;
+    filter: blur(20px);
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+
+@media (orientation: portrait) {
+  .bg-top {
+    background-image: url("../images/bg_top_portrait_small.jpg");
+    background-size: 500%;
+  }
+}
+
+.bg-bottom {
+    z-index: -2;
+
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 100%;
+
+    background: url("../images/bg_bottom.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    filter: blur(36px);
+}
+
+
+
+/*Navbar elements styles*/
+.navbar-secondary {
+    justify-content: start;
+}
+
+.nav-link, .nav-link:visited {
+    font-size: 18px;
+    line-height: 22px;
+    /* identical to box height, or 122% */
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.nav-link-collapsed, .nav-link-collapsed:visited  {
+    color: #262626;
+}
+
+.nav-link:hover{
+    color: #262626;
+}
+
+.green_dropdown_arrow {
+    background: url("../images/green_arrow_down.svg") no-repeat;
+    display: inline-block;
+    width: 14px;
+    height: 12px;
+    vertical-align: middle;
+    line-height: 1;
+    margin: 0.2rem 0 0 0.5rem;
+}
+
+.nav-link-collapsed {
+    color: #262626;
+}
+
+.nvabar-tagline {
+
+    font-size: 14px;
+    line-height: 28px;
+    /* identical to box height, or 200% */
+    color: #000000;
+}
+
+.landing-page-description {
+    font-family: Bevellier-MediumItalic;
+    font-size: 4.3em;
+    line-height: 1.1em;
+
+    color: #0040A3;
+}
+
+.landing-page-description-lg {
+    font-family: Bevellier-MediumItalic;
+    font-size: 3.4em;
+    line-height: 1.1em;
+
+    color: #0040A3;
+}
+
+.landing-page-description-md {
+    font-family: Bevellier-MediumItalic;
+
+    font-size: 2.4em;
+    line-height: 1.1em;
+
+    color: #0040A3;
+}
+
+.landing-page-description-sm {
+    font-family: Bevellier-MediumItalic;
+    font-size: 1.8em;
+    line-height: 1.1em;
+
+    color: #0040A3;
+}
+
+.mainsearch{
+    font-size: 1.4rem;
+}
+
+.main-section {
+    padding-top: 10vh;
+}
+.searchbox {
+    box-shadow: 0px 23px 65px -14px rgba(0, 48, 123, 0.21);
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right:  0;
+    font-size: 1.4rem;
+    padding: 1px 0px 1px 25px;
+}
+
+.search-button {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border:  1px solid green;
+    border-left:  0;
+    background-color: #120082;
+}
+
+
+/* Jumping 'browse dWebsites arrow*/
+.bounce {
+  -moz-animation: bounce 2s 3;
+  -webkit-animation: bounce 2s 3;
+  animation: bounce 2s 3;
+  font-size: 1.5rem;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+}
+
+/* below landing page */
+.category-select {
+    background: #FFFFFF;
+    box-shadow: 0px 11px 35px -7px rgba(18, 0, 130, 0.22);
+    border-radius: 6px;
+    height: 46px;
+    width: 80%;
+    max-width: 322px;
+    padding-left: 15px;
+}
+
+.card-upper-rect {  
+    height: 195px;
+    background: #E3EBED;
+    border-radius: 6px;
+}
+
+.card-img {
+    overflow: hidden;
+    width: 100px;
+    height: 100px;
+    border-radius:50%;
+    border: 1px solid black;
+}
+
+.card-site-name {
+    font-family: Bevellier-Regular;
+    font-size: 1.4em;
+    line-height: 25px;
+    color: #0040A3;
+    padding-top: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* number of lines to show */
+    -webkit-box-orient: vertical;
+}
+
+.card-site-description {
+    font-family: Alpino-Regular;
+    font-size: 1.1em;
+    line-height: 20px;
+    color: #000000;
+    text-align: center;
+    margin-top: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    -webkit-box-orient: vertical;
+}
+
+.card-site-link {
+    font-family: Alpino-Regular;
+    font-size: 1.1em;
+    line-height: 19px;
+    margin-bottom: 20px;
+}
+
+.card-content {
+    height:  90px;
+    padding-left:  10px;
+    padding-right:  10px;
+}
+
+.load-more-btn {
+    font-family: Alpino-Regular;
+    font-size: 16 px;
+    color: #120082;
+    width:  80%;
+    max-width: 300px;
+    border: 1px solid #120082;
+    box-sizing: border-box;
+    border-radius: 6px;
+}
+
+.load-more-div {
+    padding-top:  80px;
+    padding-bottom: 80px;
+}
+
+.footer-items, .footer-items a, .footer-items a:visited {
+    margin: 20px;
+    font-family: Bevellier-Regular;
+    font-size: 18px;
+    line-height: 22px;
+    color: #0D0374;
+}
+
+.footer-items a, .footer-items a:visited {
+    text-decoration: none;
+}
+
+.footer {
+    height: 300px;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(255, 255, 255)' stroke-width='5' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.navbar-toggler {
+  border-color: rgb(255, 255, 255);
+} 
+
+.mw-25 {
+    max-width:  25%;
+}
+
+.mw-50 {
+    max-width:  50%;
+}
+
+.mw-75 {
+    max-width: 75%;
+}
+
+.scroll-arrow {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+  cursor: pointer;
+
+}
+
+.w-95 {
+    width:  95%! important;
+}
+
+.h-10 {
+    height: 10%! important;
+}
+
+.search-results {
+    font-family: Alpino-Light;
+    font-size: 28px;
+    color: #000000;
+    padding-top:  20px;
+    padding-bottom: 0;
+}
+
+.search-results-terms {
+    font-family: Alpino-Medium;
+    font-size: 28px;
+    color: #000000;
+}
+
+.NFTW-search-results {  
+    height: 96%;
+    background: white;
+    border-radius: 6px;
+    border: 4px solid #00E3BB;
+    margin-top:  15px;
+    max-height: 600px;
+}
+
+.mw-640px {
+    max-width: 640px;
+}
+
+.about-image-xxl {
+    z-index:  -1;
+    right:  0;
+}
+
+.search-icon {
+    height:  25px;
+}
+
+.search-bar {
+    flex-grow:  0;
+    max-width: 540px;
+}
+
+.w-45 {
+    width: 45% ! important;
+}
+
+.esteroids-navbar-toggler:focus {
+    box-shadow: 0 0 0 .25rem white;
+}
+
+.card-esteroids {
+    max-width:250px;
+    min-width:250px;
+    border-radius: 6px;
+    border: 1px solid;
+    border-color: #666666;
+    margin: .8rem .75rem;
+    transform: rotate(0);
+    text-align: center;
+}
+
+
+.custom-toggler .navbar-toggler-icon {
+    background-image: url("../images/search.svg");
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+}
+
+.custom-toggler {
+    background-color: #0040A3;
+}
+
+.WotW {
+    position: relative;   
+    text-align: center;   
+    color: white; 
+    border-radius: 6px; 
+    border: 6px solid #00b392; 
+    radius: 6px;
+}
+
+
+.WotW-background {
+    position: absolute; 
+    top: 0; 
+    left:  0; 
+    height: 100%; 
+    width:  100%; 
+    background: linear-gradient(rgba(255, 255, 255, 0.2) 45%, rgba(0, 0, 0, 1));
+}
+
+.WotW-header {
+    font-family: Bevellier-Bold;
+    font-size: 1.3vw; 
+    position: absolute;   
+    top: 8px;   
+    left: 16px; 
+    background: #00E3BB; 
+    border-radius: 22.5806px; 
+    color: #0040A3; 
+    padding-left: 20px; 
+    padding-right: 20px; 
+    padding-top: 5px; 
+    padding-bottom: 5px
+}
+
+.WotW-details-frame {
+    position: absolute;   
+    bottom: 0px; 
+    left: 0px; 
+    width: 100%;
+}
+
+.WotW-details-text {
+    position: relative;     
+    left: 16px; 
+    text-align: left; 
+    width: 80%;
+}
+
+.WotW-title {
+    font-size: 1.6vw; 
+    font-weight: bold; 
+    padding-bottom: 7px;
+}
+
+.WotW-desc {
+    font-size: 1.1vw;
+    padding-bottom: 5px;
+}
+
+@media only screen and (max-width: 576px) {
+    .WotW-header {
+        font-size: 2.3vw; 
+    }
+
+    .WotW-title {
+        font-size: 4.5vw; 
+    }
+
+    .WotW-desc {
+        font-size: 2vw;
+        padding-bottom: 5px;
+    }
+
+}
+
+.WotW-link {
+    text-decoration: none !important; 
+     color: inherit;
+}
+
+.WotW-link:hover {
+    color: #9999ff ;
+}
