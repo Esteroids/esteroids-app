@@ -17,7 +17,7 @@ import About from "./components/about"
 import ScrollToTop from "./components/scroll_to_top";
 import LandingPage from "./components/landing_page";
 
-const EsteroidDevAnalytics = 'REACT_APP_ESTEROIDS_DEV' in process.env && React.lazy(() => import(`./components/dev/${process.env.REACT_APP_ESTEROIDS_DEV}`));
+const EsteroidDevAnalytics = ('REACT_APP_ESTEROIDS_DEV' in process.env && React.lazy(() => import(`./components/${process.env.REACT_APP_ESTEROIDS_DEV}`)));
 
 const BROWSE_PATHS = ["/", "/popular", "/new", "/recent", "/all"]
 
@@ -67,8 +67,7 @@ const App = () => {
         { 'REACT_APP_ESTEROIDS_DEV' in process.env && (<Suspense fallback={(<span></span>)}>
             <EsteroidDevAnalytics originUrl={originUrl} />
         </Suspense>) }
-         
-            
+              
     </Router>
     );
 }
