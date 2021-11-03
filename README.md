@@ -53,10 +53,10 @@ or build a static version of it with:
 ```yarn build```
 
 ## Getting help
-If you have questions, concerns, bug reports, etc, please open an issue in this repository's Issue Tracker, send us an email to contact@esteroids.xyz or come to our [Discord](http://discord.gg/9c2EWzjFzY).
+If you have questions, concerns, bug reports, etc, please open an issue in this repository's Issue Tracker, send us an email to contact@esteroids.xyz or come to our [Discord](https://discord.gg/9c2EWzjFzY).
 
 ## Getting involved
-Esteroids is a project from the community by the community, and as such we encourage you to be involved. You can either contact us in email (contact@esteroids.xyz), [Twitter](https://twitter.com/e_steroids) or [Discord](http://discord.gg/9c2EWzjFzY), or simply form the project, add features, and do a PR for us to look at it.
+Esteroids is a project from the community by the community, and as such we encourage you to be involved. You can either contact us in email (contact@esteroids.xyz), [Twitter](https://twitter.com/e_steroids) or [Discord](https://discord.gg/9c2EWzjFzY), or simply form the project, add features, and do a PR for us to look at it.
 
 ----
 
