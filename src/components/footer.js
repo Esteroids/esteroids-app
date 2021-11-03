@@ -18,7 +18,7 @@ function Footer(){
                     </div>
 
                     <div className="footer-items d-none d-lg-block">
-                      <a href="https://discord.com/invite/YkXepbKc" target="_blank" rel="noreferrer">
+                      <a href="https://discord.gg/9c2EWzjFzY" target="_blank" rel="noreferrer">
                         <img src="./images/discord.svg" alt="Discord icon"/>&nbsp;&nbsp; DISCORD &nbsp;&nbsp; <img src="./images/blue_arrow_left.svg" alt="left blue arrow"/>
                       </a>
                     </div>                   
