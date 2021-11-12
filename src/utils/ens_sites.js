@@ -1,16 +1,24 @@
-const DEFAULT_GATEWAY = '.link'
+const DEFAULT_GATEWAY = 'limo'
 
 
 const getOriginGateway = (originUrl) => { 
     if (!originUrl) return DEFAULT_GATEWAY;
-    
+    let choosenGateway = '.' + DEFAULT_GATEWAY;
     try{
         const url = new URL(originUrl);
-        if (url?.hostname&&url.hostname.toLowerCase().endsWith('.eth.limo')){
-            return '.limo'
+        if (url?.hostname){
+            const gateway_ending = url.hostname.toLowerCase().split('.').pop();
+            switch (gateway_ending) {
+                case 'limo':
+                case 'link':
+                  choosenGateway = gateway_ending;
+                  break;
+                default:
+                  choosenGateway = DEFAULT_GATEWAY;
+            }
         }
     }catch{}
-    return DEFAULT_GATEWAY;
+    return '.' + choosenGateway;
 }
 
 const EnsSite = {
