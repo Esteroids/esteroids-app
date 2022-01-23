@@ -66,6 +66,33 @@ body {
     color: #262626;
 }
 
+.discord-icon {
+    mask: url(../images/discord.svg) no-repeat center / contain;
+    -webkit-mask: url(../images/discord.svg) no-repeat center / contain;
+    width: 18px;
+    height: 24px;
+  }
+
+.twitter-icon {
+    mask: url(../images/twitter.svg) no-repeat center / contain;
+    -webkit-mask: url(../images/twitter.svg) no-repeat center / contain;
+    width: 18px;
+    height: 24px;
+}
+
+.nav-link .twitter-icon,  .nav-link .discord-icon{
+    background-color: #FFFFFF;
+}
+
+.nav-link:hover .twitter-icon,  .nav-link:hover .discord-icon{
+    background-color: #262626;
+}
+
+.nav-link-collapsed .twitter-icon, .nav-link-collapsed:visited .twitter-icon, 
+.nav-link-collapsed .discord-icon,.nav-link-collapsed:visited .discord-icon {
+    background-color: #262626;
+}
+
 .green_dropdown_arrow {
     background: url("../images/green_arrow_down.svg") no-repeat;
     display: inline-block;
