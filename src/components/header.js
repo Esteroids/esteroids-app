@@ -105,6 +105,11 @@ function NavBarItemMainPage(props){
   )
 }
 
+const MAIN_NAV_BAR_SOCIAL_ITEMS = [
+  { link: "https://discord.gg/9c2EWzjFzY", class: "discord-icon"},
+  { link: "https://twitter.com/e_steroids", class: "twitter-icon"}
+];
+
 function NavBarMainPage(props){
   
   const [menuOpen, setMenuOpen] = useState(false);
@@ -127,6 +132,15 @@ function NavBarMainPage(props){
           {MAIN_NAV_BAR_ITEMS.map((menu_item, index) => (
                             <NavBarItemMainPage key={index} value={menu_item} menuOpen={menuOpen} />
                         ))}
+          {
+          !menuOpen && MAIN_NAV_BAR_SOCIAL_ITEMS.map((menu_item, index) => (
+            <li className="nav-item">
+              <a href={menu_item.link} target="_blank" rel="noreferrer"  className={ "nav-link" + ((menuOpen && " nav-link-collapsed") || "")}>
+                <div className={menu_item.class} />
+              </a>
+            </li>
+          ))}
+            
         </ul>
       </div> {/*-- navb */}
     </nav>
