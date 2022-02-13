@@ -134,7 +134,7 @@ function NavBarMainPage(props){
                         ))}
           {
           !menuOpen && MAIN_NAV_BAR_SOCIAL_ITEMS.map((menu_item, index) => (
-            <li className="nav-item">
+            <li className="nav-item" key={'social' + index.toString()}>
               <a href={menu_item.link} target="_blank" rel="noreferrer"  className={ "nav-link" + ((menuOpen && " nav-link-collapsed") || "")}>
                 <div className={menu_item.class} />
               </a>
