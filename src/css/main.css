@@ -51,7 +51,8 @@ body {
 }
 
 .nav-link, .nav-link:visited {
-    font-size: 18px;
+    
+    font-size: 1.4rem;
     line-height: 22px;
     /* identical to box height, or 122% */
     text-transform: uppercase;
@@ -60,6 +61,7 @@ body {
 
 .nav-link-collapsed, .nav-link-collapsed:visited  {
     color: #262626;
+    font-size: 18px;
 }
 
 .nav-link:hover{
@@ -69,14 +71,14 @@ body {
 .discord-icon {
     mask: url(../images/discord.svg) no-repeat center / contain;
     -webkit-mask: url(../images/discord.svg) no-repeat center / contain;
-    width: 18px;
+    width: 22px;
     height: 24px;
   }
 
 .twitter-icon {
     mask: url(../images/twitter.svg) no-repeat center / contain;
     -webkit-mask: url(../images/twitter.svg) no-repeat center / contain;
-    width: 18px;
+    width: 22px;
     height: 24px;
 }
 
