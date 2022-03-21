@@ -1,4 +1,4 @@
-import React, {  Suspense, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -16,8 +16,8 @@ import PrivacyPolicy from "./components/privacy_policy"
 import About from "./components/about"
 import ScrollToTop from "./components/scroll_to_top";
 import LandingPage from "./components/landing_page";
+import Svgs from "./components/Svgs/Svgs";
 
-const EsteroidDevAnalytics = ('REACT_APP_ESTEROIDS_DEV' in process.env && React.lazy(() => import(`./components/${process.env.REACT_APP_ESTEROIDS_DEV}`)));
 
 const BROWSE_PATHS = ["/", "/popular", "/new", "/recent", "/all"]
 
@@ -33,6 +33,7 @@ const App = () => {
     
     return (
     <Router basename="/">
+        <Svgs />
         <ScrollToTop />
         <Switch>
             <Route exact path={BROWSE_PATHS}>
@@ -64,9 +65,6 @@ const App = () => {
         <Footer/>
         <div className="bg-top"> </div>
         <div className="bg-bottom"> </div>
-        { 'REACT_APP_ESTEROIDS_DEV' in process.env && (<Suspense fallback={(<span></span>)}>
-            <EsteroidDevAnalytics originUrl={originUrl} />
-        </Suspense>) }
               
     </Router>
     );

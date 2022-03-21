@@ -51,16 +51,20 @@ function NavBarSecondaryPage(props){
   return (
     <nav className="navbar navbar-expand-xl h-100 navbar-secondary">
       <Link to={'/'}>
-        <img className="navbar-brand h-100 d-none d-xl-block" src="./images/logo.svg" alt="Esteroids logo and tagline"/>
+        <svg className="navbar-brand h-100 d-none d-xl-block" width="161" height="44" version="2.0" alt="Esteroids logo">
+          <use href="#esteroids-logo" />
+        </svg>
       </Link>
 
       <Link to={'/'}>
-        <img className="navbar-brand h-100 d-xl-none d-xxl-none" src="./images/logo.svg" alt="Esteroids logo and tagline"/>
+        <svg className="navbar-brand h-100 d-xl-none d-xxl-none" width="161" height="44" version="2.0" alt="Esteroids logo">
+          <use href="#esteroids-logo" />
+        </svg>
       </Link>
 
       
       <form id="search-bar"  onSubmit={handleSearch} className={'navbar-nav w-45 navbar-collapse collapse search-bar '+(menuOpen&&' show pt-2')||''}>
-        <div className="input-group mb-3 search-icon">
+        <div className="input-group mb-3">
           <input type="text" className="form-control searchbox" placeholder="Search dWebsites" value={props.searchTerm} onChange={event => {
                     props.setSearchTerm(event.target.value)
                 }}
@@ -68,7 +72,9 @@ function NavBarSecondaryPage(props){
 
           <div className="input-group-append">
             <button type="submit" id="basic-addon2" className="input-group-text search-button">
-              <img src="./images/search.svg" className="search-icon" alt="Search icon"/>
+              <svg version="2.0" className="search-icon" alt="Search icon">
+                <use href="#search" />
+              </svg>
             </button>
           </div>
         </div>
@@ -85,11 +91,11 @@ const MAIN_NAV_BAR_ITEMS = [
   {label: 'All', link: '/all', id: 'nav-link-4'}
 ];
 
-const NavBarLink = React.forwardRef((props, ref) => (
-  <a ref={ref} {...props}> {props.children}</a>
-))
-
-
+const MAIN_NAV_BAR_SOCIAL_ITEMS = [
+  { link: "https://twitter.com/dwebsitesbot", class: "twitter-icon", altLabel: "Latest dWebsites bot", svgId: 'robot'},
+  { link: "https://discord.gg/9c2EWzjFzY", class: "discord-icon", altLabel: "Our Discord", svgId: 'discord'},
+  { link: "https://twitter.com/e_steroids", class: "twitter-icon", altLabel: "Our Twitter", svgId: 'twitter'},
+];
 
 function NavBarItemMainPage(props){
   let class_list = "nav-link" 
@@ -98,17 +104,14 @@ function NavBarItemMainPage(props){
   }
   return (
     <li className="nav-item">
-      <Link to={props.value.link} component={NavBarLink} className={class_list} >{props.value.label}
-        <i className="green_dropdown_arrow"/>
+      <Link to={props.item.link} className={class_list} >{props.item.label}
+        <svg version="2.0" alt="" className="green_dropdown_arrow">
+          <use href="#green-arrow" />
+        </svg>
       </Link>
     </li>
   )
 }
-
-const MAIN_NAV_BAR_SOCIAL_ITEMS = [
-  { link: "https://discord.gg/9c2EWzjFzY", class: "discord-icon", alt_label: "Our Discord"},
-  { link: "https://twitter.com/e_steroids", class: "twitter-icon", alt_label: "Our Twitter"}
-];
 
 function NavBarMainPage(props){
   
@@ -116,7 +119,9 @@ function NavBarMainPage(props){
   return (
     <nav className="navbar navbar-expand-xl flex-grow-0">
        <Link to={'/'}>
-         <img className="navbar-brand" src="./images/logo.svg" alt="Esteroids logo and tagline"/>
+         <svg className="navbar-brand" width="161" height="44" version="2.0" alt="Esteroids logo">
+            <use href="#esteroids-logo" />
+          </svg>
        </Link>
 
       <button className="navbar-toggler navbar-toggler-right collapsed" 
@@ -130,17 +135,19 @@ function NavBarMainPage(props){
       <div id="navb" className={ 'navbar-collapse collapse order-3'+(menuOpen&&' show')||'' }>
         <ul className="navbar-nav ms-auto">
           {MAIN_NAV_BAR_ITEMS.map((menu_item, index) => (
-                            <NavBarItemMainPage key={index} value={menu_item} menuOpen={menuOpen} />
+                            <NavBarItemMainPage key={index} item={menu_item} menuOpen={menuOpen} />
                         ))}
-          {
-          !menuOpen && MAIN_NAV_BAR_SOCIAL_ITEMS.map((menu_item, index) => (
+          
+          {!menuOpen && MAIN_NAV_BAR_SOCIAL_ITEMS.map((menu_item, index) => (
             <li className="nav-item" key={'social' + index.toString()}>
               <a href={menu_item.link} target="_blank" rel="noreferrer"  className={ "nav-link" + ((menuOpen && " nav-link-collapsed") || "")}>
-                <div className={menu_item.class} role="img" aria-label={menu_item.alt_label} > </div>
+                <svg width="24" height="24" version="2.0" fill="currentColor" alt={menu_item.altLabel}>
+                    <use href={"#" + menu_item.svgId} />
+                  </svg>
               </a>
             </li>
           ))}
-            
+          
         </ul>
       </div> {/*-- navb */}
     </nav>

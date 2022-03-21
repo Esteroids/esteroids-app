@@ -51,7 +51,6 @@ body {
 }
 
 .nav-link, .nav-link:visited {
-    
     font-size: 1.4rem;
     line-height: 22px;
     /* identical to box height, or 122% */
@@ -82,6 +81,8 @@ body {
     height: 24px;
 }
 
+.robot-icon-st0{fill-rule:evenodd;clip-rule:evenodd;}
+
 .nav-link .twitter-icon,  .nav-link .discord-icon{
     background-color: #FFFFFF;
 }
@@ -96,7 +97,6 @@ body {
 }
 
 .green_dropdown_arrow {
-    background: url("../images/green_arrow_down.svg") no-repeat;
     display: inline-block;
     width: 14px;
     height: 12px;
@@ -208,6 +208,7 @@ body {
     width: 80%;
     max-width: 322px;
     padding-left: 15px;
+    font-size: 20px;
 }
 
 .card-upper-rect {  
@@ -266,10 +267,10 @@ body {
 
 .load-more-btn {
     font-family: Alpino-Regular;
-    font-size: 16 px;
+    font-size: 20px;
     color: #120082;
     width:  80%;
-    max-width: 300px;
+    max-width: 240px;
     border: 1px solid #120082;
     box-sizing: border-box;
     border-radius: 6px;
@@ -286,6 +287,10 @@ body {
     font-size: 18px;
     line-height: 22px;
     color: #0D0374;
+}
+
+.footer-items:hover,.footer-items a:hover{
+    color: #5865f2;
 }
 
 .footer-items a, .footer-items a:visited {
@@ -369,6 +374,7 @@ body {
 
 .search-icon {
     height:  25px;
+    width: 25px;
 }
 
 .search-bar {
