@@ -147,7 +147,9 @@ function BrowseSitesHelper(){
         }
       }, 200); 
             }}>
-            <img src="./images/arrow.svg" alt="Browse dWebsites" />Browse dWebsites
+            <svg width="21" height="21" version="2.0" fill="currentColor" alt="Browse dWebsites">
+              <use href="#black-arrow" />
+            </svg>Browse dWebsites
           </div>);
  
 }

@@ -104,9 +104,11 @@ function SearchResults({originUrl}){
     }
     
 
-
+    let newTitle = titleHandler.getSearchTitle(searchTerm)
     const pageHeaderTitle = (<Helmet>
-      <title>{titleHandler.getSearchTitle(searchTerm)}</title>
+      <title>{newTitle}</title>
+      <meta name="twitter:title" content={newTitle} />
+      <meta property="og:title" content={newTitle} />
     </Helmet>)
 
     
