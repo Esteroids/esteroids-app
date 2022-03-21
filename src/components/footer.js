@@ -1,5 +1,12 @@
 import {Link} from "react-router-dom";
 
+function BlueArrowLeft(){
+  return (
+  <svg width="7" height="17" version="2.0" fill="currentColor" >
+    <use href="#blue-arrow-left" />
+  </svg>);
+}
+
 function Footer(){
     return (
         <div className="container">
@@ -9,50 +16,65 @@ function Footer(){
                     
                     <div className="footer-items d-none d-lg-block">
                       <a href="https://twitter.com/e_steroids" target="_blank" rel="noreferrer">
-                        <img src="./images/twitter.svg" alt="Twitter icon"/>&nbsp;&nbsp; TWITTER &nbsp;&nbsp; <img src="./images/blue_arrow_left.svg" alt="left blue arrow"/>
+                      <svg version="2.0" width="19" height="15" fill="currentColor" alt="Twitter">
+                        <use href="#twitter" />
+                      </svg>&nbsp;&nbsp; TWITTER &nbsp;&nbsp; <BlueArrowLeft/>
                       </a>
                     </div>
 
                     <div className="footer-items d-lg-none d-xl-non d-xxl-none">
-                      <img src="./images/twitter.svg" alt="Twitter icon"/>
+                      <svg version="2.0" width="19" height="15" fill="currentColor" alt="Twitter">
+                        <use href="#twitter" />
+                      </svg>
                     </div>
 
                     <div className="footer-items d-none d-lg-block">
                       <a href="https://discord.gg/9c2EWzjFzY" target="_blank" rel="noreferrer">
-                        <img src="./images/discord.svg" alt="Discord icon"/>&nbsp;&nbsp; DISCORD &nbsp;&nbsp; <img src="./images/blue_arrow_left.svg" alt="left blue arrow"/>
+                      <svg version="2.0" width="19" height="15" fill="currentColor" alt="Discord">
+                        <use href="#discord" />
+                      </svg>&nbsp;&nbsp; DISCORD &nbsp;&nbsp; 
+                        <BlueArrowLeft />
                       </a>
                     </div>                   
 
                     <div className="footer-items d-lg-none d-xl-non d-xxl-none">
-                      <img src="./images/discord.svg" alt="Discord icon"/>
+                      <svg version="2.0" width="19" height="15" fill="currentColor" alt="Discord">
+                        <use href="#discord" />
+                      </svg>
                     </div>
 
                     <div className="footer-items d-none d-lg-block">
                       <Link to="/about">
-                        <img src="./images/info.svg" alt="info emoji"/>&nbsp;&nbsp; ABOUT &nbsp;&nbsp;<img src="./images/blue_arrow_left.svg" alt="left blue arrow"/>
+                      <svg width="7" height="17" version="2.0" fill="currentColor" alt="info">
+                        <use href="#info" />
+                      </svg>&nbsp;&nbsp; ABOUT &nbsp;&nbsp;<BlueArrowLeft />
                       </Link>
                     </div>
 
                     <div className="footer-items d-lg-none d-xl-non d-xxl-none">
                       <Link to="/about">
-                        <img src="./images/info.svg" alt="info emoji"/>
+                        <svg width="7" height="17" version="2.0" fill="currentColor" alt="info">
+                          <use href="#info" />
+                        </svg>
                       </Link>
                     </div>
 
                   </div>
                   <div className="footer-items d-none d-lg-block">
                     <Link to="/">
-                      <img src="./images/logo.svg" alt="Esteroids logo"/>
-                      </Link>
+                      <svg width="161" height="30" version="2.0" alt="Esteroids logo">
+                        <use href="#esteroids-logo" />
+                      </svg>
+                    </Link>
                   </div>
                   <div className="footer-items d-none d-lg-block">
                     <Link to="/privacy">
-                      PRIVACY POLICY&nbsp;&nbsp;<img src="./images/blue_arrow_left.svg" alt="left blue arrow"/>
+                      PRIVACY POLICY&nbsp;&nbsp;<BlueArrowLeft />
                     </Link>
                   </div>
                   <div className="footer-items m-0 d-sm-none d-md-none d-lg-none d-xl-none d-xxl-none">
                     <Link to="/privacy" className="m-0">
-                      PRIVACY POLICY&nbsp;&nbsp;<img src="./images/blue_arrow_left.svg" alt="left blue arrow"/>
+                      PRIVACY POLICY&nbsp;&nbsp;<BlueArrowLeft />
                     </Link>
                   </div>
                 </div>

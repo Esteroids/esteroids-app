@@ -27,7 +27,11 @@ function MainSearchBar(){
             <input type="text" ref={input => input && input.focus()} value={searchTerm} onChange={event => { setSearchTerm(event.target.value) }} 
             className="form-control searchbox mainsearch" placeholder="Search dWebsites" aria-label="Search dWebsites" aria-describedby="basic-addon2"/>
             <div className="input-group-append">
-              <button type="submit" className="input-group-text search-button" id="basic-addon2"><img src="./images/search.svg" alt="Search icon"/></button>
+              <button type="submit" className="input-group-text search-button" id="basic-addon2">
+              <svg version="2.0" alt="Search icon" height="40" width="40">
+                <use href="#search" />
+              </svg>
+             </button>
             </div>
           </div>
         </form>);
