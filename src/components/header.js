@@ -164,8 +164,11 @@ function Header(){
   let pageHeaderTitle = null;
   // search page will get special update
   if (!(location?.pathname) || (location?.pathname && location.pathname!=='/search')){
+    let newTitle = titleHandler.getTitle(location)
     pageHeaderTitle = (<Helmet>
-      <title>{titleHandler.getTitle(location)}</title>
+      <title>{newTitle}</title>
+      <meta name="twitter:title" content={newTitle} />
+      <meta property="og:title" content={newTitle} />
     </Helmet>)
   }
 
