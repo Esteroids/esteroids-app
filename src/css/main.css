@@ -500,3 +500,12 @@ body {
 .WotW-link:hover {
     color: #9999ff ;
 }
+
+.info-page{
+    font-size: 1.4rem;
+}
+
+.info-body{
+    background-color: #FFFFFF;
+    border-radius: 10px; 
+}
