@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet'
 import titleHandler from '../utils/page_title'
 import {Link, useHistory, useLocation} from "react-router-dom";
 
-const MAIN_ROUTES = ["/", "/popular", "/new", "/recent", "/all"]
+const MAIN_ROUTES = ["/", "/popular", "/new", "/recent", "/all", "/competition"]
 
 function Navbar(props) {
   const home = (MAIN_ROUTES.indexOf(props.location.pathname)!==-1) ? true : false
@@ -85,10 +85,10 @@ function NavBarSecondaryPage(props){
 }
 
 const MAIN_NAV_BAR_ITEMS = [ 
+  {label: 'Competition', link: '/competition', id: 'nav-link-5'},
   {label: 'New', link: '/new', id: 'nav-link-1'},
   {label: 'Popular', link: '/popular', id: 'nav-link-2'},
-  {label: 'Recently Updated', link: '/recent', id: 'nav-link-3'}, 
-  {label: 'All', link: '/all', id: 'nav-link-4'}
+  {label: 'Recently Updated', link: '/recent', id: 'nav-link-3'}
 ];
 
 const MAIN_NAV_BAR_SOCIAL_ITEMS = [

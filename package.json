@@ -3,26 +3,30 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@nlpjs/lang-en-min": "^4.23.4",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
-    "ipfs-core": "^0.5.4",
-    "javascript-time-ago": "^2.3.4",
-    "jquery": "^3.6.0",
+    "browserslist": "^4.20.2",
+    "caniuse-lite": "^1.0.30001324",
+    "ipfs-http-client": "^56.0.3",
+    "ethers": "^5.6.8",
+    "it-all": "^1.0.6",
+    "js-sha3": "^0.8.0",
     "node-sass": "^5.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
-    "react-infinite-scroll-component": "^6.0.0",
+    "react-lazyload": "^3.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
-    "request": "^2.88.2",
-    "unzipper": "^0.10.11",
+    "react-tooltip": "^4.2.21",
+    "uint8arrays": "^3.0.0",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "GENERATE_SOURCEMAP=false react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -50,5 +54,9 @@
   "devDependencies": {
     "css-brunch": "^2.10.0",
     "javascript-brunch": "^2.10.0"
+  },
+  "resolutions": {
+    "//": "See https://github.com/facebook/create-react-app/issues/11773",
+    "react-error-overlay": "6.0.9"
   }
 }

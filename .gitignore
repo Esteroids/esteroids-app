@@ -17,6 +17,7 @@
 .env.development.local
 .env.test.local
 .env.production.local
+.env
 
 npm-debug.log*
 yarn-debug.log*
@@ -34,3 +35,6 @@ public/images/dwebsite_of_the_week
 src/data/ens_dict.js
 src/data/dwebsite_of_the_week.json
 src/components/dev/*
+src\\data\\ens_dict.js
+
+.env

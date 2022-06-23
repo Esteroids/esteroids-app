@@ -6,6 +6,8 @@ import getSearchRank from '../utils/search_rank';
 import { Helmet } from 'react-helmet'
 import titleHandler from '../utils/page_title'
 
+import SearchWnftPlacement from "./wnft/SearchWnftPlacement.js";
+
 
 const DEFAULT_SEARCH_RESULTS_NUMBER = 12;
 const LOAD_MORE_SEARCH_RESULTS_NUMBER = 6;
@@ -43,15 +45,7 @@ const searchResults = (searchTerm, sites) => {
 }
 
 
-function SearchNFTPlaceholder(){
-  return (
-            <div className="col-md-3 v-100">
-              <div className="NFTW-search-results d-flex flex-column justify-content-center align-items-center">
-                <img className="card-img" src="./images/NFTW_placeholder.jpg" alt=""/>
-                <div className="card-site-name"> This belongs to YOU! </div>
-              </div>
-            </div>);
-}
+
 
 function Cards(props) {
 
@@ -68,7 +62,7 @@ function Cards(props) {
               { cards }
             </div>
           </div>
-          {SearchNFTPlaceholder()}
+          <SearchWnftPlacement searchTerm={props.searchTerm} ipfs={props.ipfs} isIpfsReady={props.isIpfsReady} />
         </div>
       </div>
       )
@@ -90,7 +84,7 @@ const LoadMore = ({totalResults, currentResultsShown, setCurrentResultsShown}) =
 }
 
 
-function SearchResults({originUrl}){
+function SearchResults(props){
 
     const [currentResultsShown, setCurrentResultsShown] = useState(DEFAULT_SEARCH_RESULTS_NUMBER);
     let location = useLocation();
@@ -116,7 +110,7 @@ function SearchResults({originUrl}){
       <div className="container">
         {pageHeaderTitle}
         <SearchResultsDetails totalResults = {search_results.length} searchTerm = {searchTerm}/>
-        <Cards searchTerm = {searchTerm} searchResults={search_results} currentResultsShown={currentResultsShown} originUrl={originUrl} />
+        <Cards searchTerm={searchTerm} searchResults={search_results} currentResultsShown={currentResultsShown} originUrl={props.originUrl} ipfs={props.ipfs} isIpfsReady={props.isIpfsReady} />
         <LoadMore totalResults={search_results.length} currentResultsShown={currentResultsShown}  setCurrentResultsShown={setCurrentResultsShown}/> 
       </div>
     );

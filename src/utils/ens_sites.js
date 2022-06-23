@@ -2,32 +2,33 @@ const DEFAULT_GATEWAY = 'limo'
 
 
 const getOriginGateway = (originUrl) => { 
-    if (!originUrl) return DEFAULT_GATEWAY;
-    let choosenGateway = '.' + DEFAULT_GATEWAY;
-    try{
-        const url = new URL(originUrl);
-        if (url?.hostname){
-            const gateway_ending = url.hostname.toLowerCase().split('.').pop();
-            switch (gateway_ending) {
-                case 'limo':
-                case 'link':
-                  choosenGateway = gateway_ending;
-                  break;
-                default:
-                  choosenGateway = DEFAULT_GATEWAY;
+    let choosenGateway = DEFAULT_GATEWAY;
+    if (!originUrl){
+        try{
+            const url = new URL(originUrl);
+            if (url?.hostname){
+                const gateway_ending = url.hostname.toLowerCase().split('.').pop();
+                switch (gateway_ending) {
+                    case 'limo':
+                    case 'link':
+                        choosenGateway = gateway_ending;
+                    break;
+                    default:
+                        choosenGateway = DEFAULT_GATEWAY;
+                }
             }
-        }
-    }catch{}
+        }catch{}
+    }
     return '.' + choosenGateway;
 }
 
 const EnsSite = {
     getExternalLink: function(ens_name, originUrl){
         const gateway = getOriginGateway(originUrl)
-        return 'https://'+ ens_name + '.eth'+gateway;
+        return 'https://'+ ens_name + '.eth' + gateway;
     },
     getDisplaySiteName: function(ens_name){
-        return ens_name+'.eth'
+        return ens_name + '.eth'
     },
     getScreenshotUrl: function(ens_site){
         if (ens_site[this.HAS_SCREENSHOT]!==undefined && ens_site[this.NAME]!==undefined){

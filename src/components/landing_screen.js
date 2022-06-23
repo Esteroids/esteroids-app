@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Header from "./header";
-import DWebSiteOfTheWeek from "./dwebsite_of_the_week"
+import FeaturedPlacements from './LandingPage/FeaturedPlacements/FeaturedPlacements';
 import { useHistory } from "react-router-dom";
 
 
@@ -54,14 +54,15 @@ const NFT_MAIN_CLASSES = {
   lxxl: 'col-xl-6 d-none d-xxl-block  my-auto',
   lgxl: 'col-lg-6 d-none d-lg-block d-xxl-none  my-auto',
   md: 'col-md-6 d-none d-sm-none d-md-block d-lg-none d-xl-none  d-xxl-none mw-50 my-auto',
-  sm: 'col-md-6 d-none d-sm-block d-md-none d-lg-none d-xl-none  d-xxl-none mw-50 my-auto'
+  sm: 'col-md-6 d-none d-sm-block d-md-none d-lg-none d-xl-none  d-xxl-none mw-50 my-auto',
+  nxs: 'col-6 d-none d-sm-block mw-50 my-auto'
 };
 
 
 function NFTMain({screenSize, originUrl}) {
   return (
       <div className={NFT_MAIN_CLASSES[screenSize]}>
-        <DWebSiteOfTheWeek originUrl={originUrl} />
+        <FeaturedPlacements originUrl={originUrl} />
       </div>
   )
 }
@@ -72,7 +73,7 @@ function SearchNFTMainXS({originUrl}) {
         <div className="col-12 d-sm-none d-md-none d-lg-none d-xl-none d-xxl-none mh-100 my-auto">
             <MainSearchBar />
             <div className="text-center m-3">
-                <DWebSiteOfTheWeek originUrl={originUrl}/>
+                <FeaturedPlacements originUrl={originUrl}/>
             </div>
         </div>
     )
@@ -130,7 +131,7 @@ function BrowseSitesHelper(){
 
   },[])
          
-  let class_names = "position-absolute bottom-0 w-95 text-center bounce btn"
+  let class_names = "position-absolute bottom-0 w-95 text-center bounce btn mb-2"
   if (browseInView){
     class_names +=" invisible"
   }
@@ -161,19 +162,10 @@ const LandingScreen = ({originUrl})=>{
             <Header />
 
             <div className="row main-section">
-                <MainSearchSpace classes="col-xl-6 d-none d-xxl-block my-auto" 
-                              landing_page_desc_classes="landing-page-description"  />
-                <NFTMain screenSize="lxxl" originUrl={originUrl} />
-                <MainSearchSpace 
-                  classes="col-lg-6 d-none d-lg-block d-xxl-none  my-auto" landing_page_desc_classes="landing-page-description-lg"/>
-                <NFTMain screenSize="lgxl" originUrl={originUrl} />
-                <MainSearchSpace 
-                  classes="col-md-6 d-none d-sm-none d-md-block d-lg-none d-xl-none d-xxl-none mw-50 my-auto" landing_page_desc_classes="landing-page-description-md" />
-                <NFTMain screenSize="md" originUrl={originUrl} />
 
                 <MainSearchSpace 
-                  classes="col-md-6 d-none d-sm-block d-md-none d-lg-none d-xl-none d-xxl-none mw-50 my-auto" landing_page_desc_classes="landing-page-description-sm" />
-                <NFTMain screenSize="sm" originUrl={originUrl} />
+                  classes="col-6 d-none d-sm-block mw-50 my-auto" landing_page_desc_classes="landing-page-description" />
+                <NFTMain screenSize="nxs" originUrl={originUrl} /> 
 
                 <SearchNFTMainXS originUrl={originUrl}/>
             </div>

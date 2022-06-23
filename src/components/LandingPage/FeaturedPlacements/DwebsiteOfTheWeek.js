@@ -1,9 +1,7 @@
 
-import EnsSite from "../utils/ens_sites";
+import EnsSite from "../../../utils/ens_sites";
 
-const DWEBSITE_OF_THE_WEEK_DATA = require('../data/dwebsite_of_the_week.json')
-
-
+const DWEBSITE_OF_THE_WEEK_DATA = require("../../../data/dwebsite_of_the_week.json")
 
 
 function DWebSiteOfTheWeek({originUrl}){
@@ -13,7 +11,7 @@ function DWebSiteOfTheWeek({originUrl}){
         <a className="WotW-link" target="_blank" rel="noreferrer" href={EnsSite.getExternalLink(DWEBSITE_OF_THE_WEEK_DATA.name, originUrl)}>
           <img className="mw-100" src={DWEBSITE_OF_THE_WEEK_DATA.img} alt="TDW placeholder"/>
           <div className="WotW-background"></div>
-          <div className="WotW-header"> dWebsite of the week </div>
+          <div className="WotW-header"> .eth Website for March 2022 </div>
           <div className="WotW-details-frame">
             <div className="WotW-details-text">
               <div className="WotW-title"> {DWEBSITE_OF_THE_WEEK_DATA.title} </div>

@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
 
 /* CSS files */
-import "./css/bootstrap.min.css"
+//import "./css/bootstrap.min.css"
 import "./css/bevellier.css"
 import "./css/alpino.css"
 import "./css/main.css";
@@ -17,13 +17,21 @@ import About from "./components/about"
 import ScrollToTop from "./components/scroll_to_top";
 import LandingPage from "./components/landing_page";
 import Svgs from "./components/Svgs/Svgs";
+import Competition from "./components/Competition/Competition";
+import {Web3ContextProvider} from "./components/wnft/hooks/Web3Context"
 
+import useIpfsFactory from "./components/wnft/hooks/useIpfsFactory"
+
+
+//const EsteroidDevAnalytics = ('REACT_APP_ESTEROIDS_DEV' in process.env && React.lazy(() => import(`./components/${process.env.REACT_APP_ESTEROIDS_DEV}`)));
 
 const BROWSE_PATHS = ["/", "/popular", "/new", "/recent", "/all"]
 
 const App = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [originUrl, setOriginUrl] = useState('');
+
+    const { ipfs, ipfsInitError, isIpfsReady } = useIpfsFactory()
 
     useEffect(() => {  
         let url_local = window?.location?.href
@@ -32,6 +40,7 @@ const App = () => {
     
     
     return (
+<Web3ContextProvider>
     <Router basename="/">
         <Svgs />
         <ScrollToTop />
@@ -39,12 +48,19 @@ const App = () => {
             <Route exact path={BROWSE_PATHS}>
                 <LandingPage originUrl={originUrl} />
             </Route>
+            <Route path="/competition">
+                <ScrollToTop />
+                <div className="container">
+                    <Header searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+                </div>
+                <Competition  />
+            </Route>
             <Route path="/search">
                 <ScrollToTop />
                 <div className="container">
                     <Header searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
                 </div>
-                <SearchResults originUrl={originUrl} />
+                <SearchResults originUrl={originUrl} ipfs={ipfs} isIpfsReady={isIpfsReady} />
             </Route>
             <Route path="/privacy">
                 <ScrollToTop />
@@ -67,6 +83,7 @@ const App = () => {
         <div className="bg-bottom"> </div>
               
     </Router>
+</Web3ContextProvider>
     );
 }
 

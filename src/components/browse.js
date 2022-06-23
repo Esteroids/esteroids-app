@@ -1,35 +1,40 @@
 import { dwebData } from "../data/ens_dict.js";
-import SiteCard from "./site_card";
 import React from "react";
 import {useHistory} from "react-router-dom";
+import Cards from "./Cards/Cards.js";
+import { siteNameToIndexes } from "./utils/DwebsiteUtils.js";
 
+const COMPETITION_SITES = require("../data/competition/2022_march.json").candidates
 
 
 const DEFAULT_NUMBER_OF_CARDS = 12;
 const LOAD_MORE_CARDS = 8;
 
-function Cards(props) {
-  
-
-  var cards = [];
-  for (let i=0; i<props.cards_number; i++) {
-    cards.push(<SiteCard  site = {dwebData['sites'][props.websites[i]]} key={i} originUrl={props.originUrl} />);
-  }
-  
-  return (<div className="row" >
-            {cards}
-          </div>
-      )
-}
-
 
 function shouldOrderRand(category){
-  return (category === "popular")
+  return (category === "popular" || category === 'competition')
 }
 
+// let competition_sites_dict = {}
+// for (let i in COMPETITION_SITES){
+//   competition_sites_dict[COMPETITION_SITES[i]] = true;
+// }
+
+
+// const competition_index = dwebData['sites'].map((site,index) => (site.n &&(competition_sites_dict[site.n])&&index) || -1 ).filter((v) => v !== -1);
+
+const competition_index = siteNameToIndexes(COMPETITION_SITES)
+
 function getDwebsites(category){
-  let websites = dwebData[category] || (category==='all' && Object.keys(dwebData['sites']))
-  if (shouldOrderRand(category)){
+  let websites
+  if (category === 'all'){
+    websites = Object.keys(dwebData['sites'])
+  }else if (category === 'competition') {
+    websites = competition_index
+  }else{
+    websites = dwebData[category]
+  }
+  if (shouldOrderRand(category)===true){
     websites = websites.sort(() => Math.random() - 0.5);
   }
   return websites;
@@ -117,7 +122,11 @@ class Browse extends React.Component {
   static getDerivedStateFromProps(props, state) {
     
     let load_more = true;
+    
     let cards_number = DEFAULT_NUMBER_OF_CARDS;
+    if (props.category==="competition"){
+      cards_number = 80
+    }
     if (props.category!==state.category){
     
 
@@ -135,27 +144,22 @@ class Browse extends React.Component {
 
   render() { 
 
-    
-    let loadMoreButton;
-    
-    if (this.state.load_more) 
-      loadMoreButton = "btn btn-outline-secondary load-more-btn";
-    else
-      loadMoreButton = "btn btn-outline-secondary load-more-btn invisible";
-
-      
+    const showLoadMore = this.state.load_more;
 
       return (
         <div className="container" id="browse_sites">
-
+          {!this.props?.hideBrowseMenu &&
+          (<>
           <BrowseMenu size="l" onCategoryChanged={this.onCategoryChanged} category={this.props.category} />
           <BrowseMenu size="s" onCategoryChanged={this.onCategoryChanged} category={this.props.category} />
+          </>)}
 
-          <Cards websites={this.state.websites} cards_number = {this.state.cards_number} originUrl={this.props.originUrl} />
-          <div className="text-center load-more-div">
+          <Cards websites={this.state.websites} cards_number = {this.state.cards_number} originUrl={this.props.originUrl} 
+          competition={this.props?.competition} />
+          {showLoadMore && (<div className="text-center load-more-div">
             <button type="button" onClick={this.onLoadMore}
-                    className={loadMoreButton}>Load More</button>
-          </div>  
+                    className="btn btn-outline-secondary load-more-btn">Load More</button>
+          </div>)}  
         </div>
       );
     }

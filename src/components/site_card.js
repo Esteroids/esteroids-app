@@ -1,9 +1,10 @@
 import React from "react";
 import EnsSite from "../utils/ens_sites";
+import ReactTooltip from 'react-tooltip';
+import LazyLoad from 'react-lazyload';
 
 // include the placeholder in build
 import DEFAULT_PLACEHOLDER from '../images/logo_placeholder.png';
-
 
 
 function isFirst(check) {
@@ -12,58 +13,109 @@ function isFirst(check) {
     return first;
 }
 
-class SiteCard extends React.Component{
+const PlaceholderComponent = props => {
+    return (
+<svg version="2.0" {...props} fill="#a3c8ff"  >
+    <use href="#esteroids" />
+</svg>)
+}
 
 
-    getScreenshotUrl(){ 
-        
-           
-        let screenshot_url = EnsSite.getScreenshotUrl(this.props.site);
-        if (screenshot_url===''){
+const SiteCard = props => {
+
+
+    const getScreenshotUrl = (site) => {
+        let screenshot_url = EnsSite.getScreenshotUrl(site);
+        if (screenshot_url === '') {
             return DEFAULT_PLACEHOLDER;
-        }else{
+        } else {
             return screenshot_url;
         }
     }
 
-    getLink(){
-        return EnsSite.getExternalLink(this.props.site[EnsSite.NAME], this.props.originUrl);
-    }
-
-    
-    getAddress() {
-        return EnsSite.getDisplaySiteName(this.props.site[EnsSite.NAME]);
+    const getLink = (site, originUrl) => {
+        return EnsSite.getExternalLink(site[EnsSite.NAME], originUrl);
     }
 
 
-    getColumnSize(location) {
-        if (location === "search_results") 
+    const getAddress = (site) => {
+        return EnsSite.getDisplaySiteName(site[EnsSite.NAME]);
+    }
+
+
+    const getColumnSize = (location) => {
+        if (location === "search_results")
             return 'col-xl-4 col-lg-6 col-md-6 d-flex justify-content-center';
-        else 
+        else
             return 'col-xl-3 col-lg-4 col-sm-6 d-flex justify-content-center';
     }
 
-    render(){
+    const location = props.location;
+    const site = props.site;
+    const first = props?.first;
+    const originUrl = props.originUrl;
+    const cardIndex = props.myIndex;
 
-        return(
-            <div className={this.getColumnSize(this.props.location)}>
-                <div className="card-esteroids">
-                    <div className={"card-upper-rect " + isFirst(this.props.first) + " d-flex flex-column justify-content-center align-items-center"}>
-                        <img className="card-img" src={this.getScreenshotUrl()} alt=""/>
-                        <div className="card-site-name"> {this.props.site[EnsSite.TITLE]} </div>
-                        </div> 
-                        <div className="card-content d-flex flex-column justify-content-around align-items-center">
-                        <div className="card-site-description">
-                            {this.props.site.d}
+    const siteAddress = getAddress(site)
+    const showCompetitionSelect = props.competition && props.competition.votingEnded !== true
+    const competition = props?.competition
+
+
+    const siteSelectedCompetition = competition && competition?.selectedCandidates[siteAddress];
+
+    const reachedMaxCandidates = competition && !siteSelectedCompetition && competition.reachedMaxCandidates
+
+    const errorToolTip = (reachedMaxCandidates && 'You can only vote for ' + competition.maxCandidates + ' candidates') || ''
+
+
+    const handleSelect = async (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        e.nativeEvent.stopImmediatePropagation();
+        if (!siteSelectedCompetition) {
+            if (!reachedMaxCandidates) {
+                await competition.addSelectedCandidate(siteAddress);
+            }
+
+        } else {
+            await competition.removeSelectedCandidate(siteAddress);
+        }
+        return false;
+    }
+
+    return (
+        <a href={getLink(site, originUrl)} target="_blank" rel="noreferrer" className={getColumnSize(location) + " full-site-card"}>
+            <div className={getColumnSize(location)}>
+                <div className={"card-esteroids" + (siteSelectedCompetition ? " card-esteroids-competition-selected" : '')}>
+                    <div className={"card-upper-rect py-2 " + isFirst(first) + " d-flex flex-column justify-content-center align-items-center"}>
+                        <LazyLoad height={100} placeholder={(<PlaceholderComponent className="card-img" width={100} height={100} />)} once>
+                            <img className="card-img" src={getScreenshotUrl(site)} alt="" width="100" height="100" />
+                        </LazyLoad>
+                        <div className="card-site-name px-1">
+                            {site[EnsSite.TITLE]}
                         </div>
-                        <div className="card-site-link">
-                            <a href={this.getLink()} target="_blank" rel="noreferrer" className="stretched-link">{this.getAddress()}</a>
+                    </div>
+                    <div className="card-content d-flex flex-column justify-content-around align-items-center">
+                        <div className="card-site-description">
+                            {site.d}
+                        </div>
+                        <div className="py-2">
+                            <div className="card-site-link">
+                                {getAddress(site)}
+                            </div>
+                            {showCompetitionSelect && (<button className={((siteSelectedCompetition && "btn-info") || "btn-primary") + " py-1 px-3"} onClick={handleSelect} data-tip={errorToolTip} data-for={"error_tooltip" + cardIndex}>
+                                {(siteSelectedCompetition && "UnSelect") || "Select"}
+                                <ReactTooltip id={"error_tooltip" + cardIndex} />
+                            </button>)}
                         </div>
                     </div>
                 </div>
-             </div>
-        );
-    }
+            </div>
+        </a>
+
+    );
 }
+
+
 
 export default SiteCard;
