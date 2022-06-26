@@ -3,6 +3,7 @@ import {getTokenData} from "./WnftActions"
 import useAsync from "../hooks/useAsync"
 import {useWeb3ProviderInfo} from "./hooks/Web3Context"
 import { useEffect, useState } from 'react'
+import WnftView from './WnftView'
 
 const all = require('it-all')
 const { concat: uint8ArrayConcat } = require('uint8arrays/concat')
@@ -42,7 +43,6 @@ const WnftPlacement = (props) =>{
 
     const { execute, status, value, error, setStatus } = useAsync(fetchTokenUri, false);
 
-    console.log('status', status)
 
     useEffect(() =>{
         if (tokenURI){
@@ -52,11 +52,9 @@ const WnftPlacement = (props) =>{
     [props.tokenData, props.isIpfsReady])
 
     return (<>
-        {status == 'success' && keyphraseRender && (<div className="WNFT-placement-preview d-flex flex-column justify-content-center align-items-center">
-            <a href={keyphraseRender.link} target="_blank">
-                <img className="WNFT-placement-preview-img w-100 v-100" src={keyphraseRender.imgSrc} alt="" />
-            </a>
-        </div>)
+        {status == 'success' && keyphraseRender && (
+        <WnftView link={keyphraseRender.link} imgSrc={keyphraseRender.imgSrc} />
+        )
         }
         </>
             )
