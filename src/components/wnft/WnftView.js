@@ -12,7 +12,7 @@ const LinkedView = (props) => {
     const cleanedUrl = getValidUrl(props.link)
     return (
 <a href={cleanedUrl} target="_blank">
-    <ImagePreview imgSrc={props.imgSrc} />
+    <ImageView imgSrc={props.imgSrc} />
 </a>
     )
 }
