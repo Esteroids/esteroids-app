@@ -11,7 +11,9 @@ const { concat: uint8ArrayConcat } = require('uint8arrays/concat')
 const NoWnftPlacement = () => {
 
     return (
-<img className="w-100 v-100" src="./images/own-a-keyword-placement.png" alt=""/>
+        <a href="https://keyphrase.esteroids.eth.limo/">
+            <img className="w-100 v-100" src="./images/own-a-keyword-placement.png" alt=""/>
+        </a>
 );
 
 }
