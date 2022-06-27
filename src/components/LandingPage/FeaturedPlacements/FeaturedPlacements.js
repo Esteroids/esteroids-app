@@ -1,7 +1,8 @@
 import DWebSiteOfTheWeek from "./DwebsiteOfTheWeek"
 import GitcoinCampaign from "./GitcoinCampaign";
+import WnftKeyphrasePlacement from "./WnftKeyphrasePlacement";
 
-const FEATURED_PLACEMENTS = [DWebSiteOfTheWeek, GitcoinCampaign];
+const FEATURED_PLACEMENTS = [WnftKeyphrasePlacement];
 
 const SHOW_STRATEGY = 'random';
 
