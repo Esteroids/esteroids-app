@@ -21,7 +21,7 @@ function getCategoryFromLocation(location){
 }
 
 
-function LandingPage({originUrl}){
+function LandingPage({defaultGatway}){
     
     let location = useLocation();
     const [category, setCategory] = useState(getCategoryFromLocation(location));
@@ -49,8 +49,8 @@ function LandingPage({originUrl}){
     
     return (
     <>{ ((location===undefined||(location?.pathname==="/"))&&(<ScrollToTop/>))||(null)}
-        <LandingScreen originUrl={originUrl}/>
-        <Browse category={category} setCategory={setCategory} originUrl={originUrl} />
+        <LandingScreen defaultGatway={defaultGatway}/>
+        <Browse category={category} setCategory={setCategory} defaultGatway={defaultGatway} />
     </>
     )
 

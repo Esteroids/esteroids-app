@@ -1,33 +1,39 @@
 const DEFAULT_GATEWAY = 'limo'
 
-
 const getOriginGateway = (originUrl) => { 
-    if (!originUrl) return DEFAULT_GATEWAY;
-    let choosenGateway = '.' + DEFAULT_GATEWAY;
-    try{
-        const url = new URL(originUrl);
-        if (url?.hostname){
-            const gateway_ending = url.hostname.toLowerCase().split('.').pop();
-            switch (gateway_ending) {
-                case 'limo':
-                case 'link':
-                  choosenGateway = gateway_ending;
-                  break;
-                default:
-                  choosenGateway = DEFAULT_GATEWAY;
+    let choosenGateway = DEFAULT_GATEWAY;
+    if (originUrl){
+        try{
+            const url = new URL(originUrl);
+            if (url?.hostname){
+                const domainParts = url.hostname.toLowerCase().split('.')
+                const gateway_ending = (domainParts.length>2 && domainParts.slice(-2).join('.')) || '';
+                switch (gateway_ending) {
+                    case 'eth.limo':
+                        choosenGateway = 'limo';
+                        break;
+                    case 'eth.link':
+                        choosenGateway = 'link';
+                        break;
+                    default:
+                        choosenGateway = DEFAULT_GATEWAY;
+                }
             }
-        }
-    }catch{}
-    return '.' + choosenGateway;
+        }catch{}
+    }
+
+    return  choosenGateway;
 }
 
+
+
 const EnsSite = {
-    getExternalLink: function(ens_name, originUrl){
-        const gateway = getOriginGateway(originUrl)
-        return 'https://'+ ens_name + '.eth'+gateway;
+    getExternalLink: function(ens_name, gateway){
+        return 'https://'+ ens_name + '.eth.' + gateway;
     },
+    getGateway: (originUrl) => getOriginGateway(originUrl),
     getDisplaySiteName: function(ens_name){
-        return ens_name+'.eth'
+        return ens_name + '.eth'
     },
     getScreenshotUrl: function(ens_site){
         if (ens_site[this.HAS_SCREENSHOT]!==undefined && ens_site[this.NAME]!==undefined){

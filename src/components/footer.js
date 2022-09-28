@@ -1,5 +1,7 @@
 import {Link} from "react-router-dom";
 
+
+
 function BlueArrowLeft(){
   return (
   <svg width="7" height="17" version="2.0" fill="currentColor" >
@@ -14,50 +16,39 @@ function Footer(){
                 <div className="footer d-flex flex-row justify-content-between align-items-center">
                   <div className="d-flex flex-row footer-items">
                     
-                    <div className="footer-items d-none d-lg-block">
-                      <a href="https://twitter.com/e_steroids" target="_blank" rel="noreferrer">
-                      <svg version="2.0" width="19" height="15" fill="currentColor" alt="Twitter">
-                        <use href="#twitter" />
-                      </svg>&nbsp;&nbsp; TWITTER &nbsp;&nbsp; <BlueArrowLeft/>
+                    <div className="footer-items">
+                      <a href="https://twitter.com/e_steroids" target="_blank" rel="noreferrer" className="d-flex flex-row align-middle align-items-center">
+                        <svg version="2.0" width="19" height="15" fill="currentColor" alt="Twitter">
+                          <use href="#twitter" />
+                        </svg>
+                        <span className="d-none d-lg-block">&nbsp;&nbsp; TWITTER &nbsp;&nbsp; <BlueArrowLeft/>
+                        </span>
                       </a>
                     </div>
 
-                    <div className="footer-items d-lg-none d-xl-non d-xxl-none">
-                      <svg version="2.0" width="19" height="15" fill="currentColor" alt="Twitter">
-                        <use href="#twitter" />
-                      </svg>
-                    </div>
 
-                    <div className="footer-items d-none d-lg-block">
-                      <a href="https://discord.gg/9c2EWzjFzY" target="_blank" rel="noreferrer">
+                    <div className="footer-items">
+                      <a href="https://discord.gg/9c2EWzjFzY" target="_blank" rel="noreferrer" className="d-flex flex-row align-middle align-items-center">
                       <svg version="2.0" width="19" height="15" fill="currentColor" alt="Discord">
                         <use href="#discord" />
-                      </svg>&nbsp;&nbsp; DISCORD &nbsp;&nbsp; 
+                      </svg>
+                      <span className="d-none d-lg-block">
+                        &nbsp;&nbsp; DISCORD &nbsp;&nbsp; 
                         <BlueArrowLeft />
+                      </span>
                       </a>
                     </div>                   
 
-                    <div className="footer-items d-lg-none d-xl-non d-xxl-none">
-                      <svg version="2.0" width="19" height="15" fill="currentColor" alt="Discord">
-                        <use href="#discord" />
-                      </svg>
-                    </div>
 
-                    <div className="footer-items d-none d-lg-block">
-                      <Link to="/about">
-                      <svg width="7" height="17" version="2.0" fill="currentColor" alt="info">
-                        <use href="#info" />
-                      </svg>&nbsp;&nbsp; ABOUT &nbsp;&nbsp;<BlueArrowLeft />
-                      </Link>
-                    </div>
-
-                    <div className="footer-items d-lg-none d-xl-non d-xxl-none">
-                      <Link to="/about">
-                        <svg width="7" height="17" version="2.0" fill="currentColor" alt="info">
+                    <div className="footer-items ">
+                      <Link to="/about" className="d-flex flex-row align-middle align-items-center">
+                        <svg width="7" height="17" version="2.0" fill="currentColor" alt="info" >
                           <use href="#info" />
                         </svg>
+                        <span className="d-none d-lg-block">&nbsp;&nbsp; ABOUT &nbsp;&nbsp;<BlueArrowLeft /></span>
                       </Link>
                     </div>
+
 
                   </div>
                   <div className="footer-items d-none d-lg-block">

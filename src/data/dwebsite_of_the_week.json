@@ -1,7 +1,7 @@
 {
-    "title": "dWebsite of the week",
-    "desc": "dWebsite of the week description",
-    "name": "dwebsite-0",
-    "img":  "./images/ext/dwebsite_of_the_week/WotW-placerholder.jpg",
-    "img_small": "./images/ext/dwebsite_of_the_week/WotW-placerholder-small.jpg"
-  }
+  "title": "Blockplots",
+  "desc": "Buy plots as NFTs on a map in a dWebsites.",
+  "name": "blockplots",
+  "img":  "./images/ext/dwebsite_of_the_week/WotW7-Blockplots-2021-10-15.jpg",
+  "img_small": "./images/ext/dwebsite_of_the_week/WotW7-Blockplots-2021-10-15-small.jpg"
+}

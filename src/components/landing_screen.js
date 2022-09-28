@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import Header from "./header";
-import DWebSiteOfTheWeek from "./dwebsite_of_the_week"
+import Header from './header/Header';
+import FeaturedPlacements from './LandingPage/FeaturedPlacements/FeaturedPlacements';
 import { useHistory } from "react-router-dom";
 
 
@@ -54,25 +54,26 @@ const NFT_MAIN_CLASSES = {
   lxxl: 'col-xl-6 d-none d-xxl-block  my-auto',
   lgxl: 'col-lg-6 d-none d-lg-block d-xxl-none  my-auto',
   md: 'col-md-6 d-none d-sm-none d-md-block d-lg-none d-xl-none  d-xxl-none mw-50 my-auto',
-  sm: 'col-md-6 d-none d-sm-block d-md-none d-lg-none d-xl-none  d-xxl-none mw-50 my-auto'
+  sm: 'col-md-6 d-none d-sm-block d-md-none d-lg-none d-xl-none  d-xxl-none mw-50 my-auto',
+  nxs: 'col-6 d-none d-sm-block mw-50 my-auto'
 };
 
 
-function NFTMain({screenSize, originUrl}) {
+function NFTMain({screenSize, defaultGatway}) {
   return (
       <div className={NFT_MAIN_CLASSES[screenSize]}>
-        <DWebSiteOfTheWeek originUrl={originUrl} />
+        <FeaturedPlacements defaultGatway={defaultGatway} size="reg" />
       </div>
   )
 }
 
 
-function SearchNFTMainXS({originUrl}) {
+function SearchNFTMainXS({defaultGatway}) {
     return (
         <div className="col-12 d-sm-none d-md-none d-lg-none d-xl-none d-xxl-none mh-100 my-auto">
             <MainSearchBar />
             <div className="text-center m-3">
-                <DWebSiteOfTheWeek originUrl={originUrl}/>
+                <FeaturedPlacements defaultGatway={defaultGatway} size="sm" />
             </div>
         </div>
     )
@@ -130,11 +131,10 @@ function BrowseSitesHelper(){
 
   },[])
          
-  let class_names = "position-absolute bottom-0 w-95 text-center bounce btn"
-  if (browseInView){
-    class_names +=" invisible"
-  }
-  return (<div className={class_names} onClick={() => {   
+  let class_names = "position-absolute bottom-0 w-95 text-center bounce btn mb-2"
+  
+  return (<>
+      {!browseInView && (<div id="browse-more" className={class_names} onClick={() => {   
       window.setTimeout(() => {
         const id = 'browse_sites'
         let element = document.getElementById(id);
@@ -150,32 +150,24 @@ function BrowseSitesHelper(){
             <svg width="21" height="21" version="2.0" fill="currentColor" alt="Browse dWebsites">
               <use href="#black-arrow" />
             </svg>Browse dWebsites
-          </div>);
+          </div>)}
+          </>);
  
 }
 
-const LandingScreen = ({originUrl})=>{
+const LandingScreen = ({defaultGatway})=>{
 
     return (
         <div id="main-container" className="container d-flex flex-column vh-100 position-relative">
             <Header />
 
             <div className="row main-section">
-                <MainSearchSpace classes="col-xl-6 d-none d-xxl-block my-auto" 
-                              landing_page_desc_classes="landing-page-description"  />
-                <NFTMain screenSize="lxxl" originUrl={originUrl} />
-                <MainSearchSpace 
-                  classes="col-lg-6 d-none d-lg-block d-xxl-none  my-auto" landing_page_desc_classes="landing-page-description-lg"/>
-                <NFTMain screenSize="lgxl" originUrl={originUrl} />
-                <MainSearchSpace 
-                  classes="col-md-6 d-none d-sm-none d-md-block d-lg-none d-xl-none d-xxl-none mw-50 my-auto" landing_page_desc_classes="landing-page-description-md" />
-                <NFTMain screenSize="md" originUrl={originUrl} />
 
                 <MainSearchSpace 
-                  classes="col-md-6 d-none d-sm-block d-md-none d-lg-none d-xl-none d-xxl-none mw-50 my-auto" landing_page_desc_classes="landing-page-description-sm" />
-                <NFTMain screenSize="sm" originUrl={originUrl} />
+                  classes="col-6 d-none d-sm-block mw-50 my-auto" landing_page_desc_classes="landing-page-description" />
+                <NFTMain screenSize="nxs" defaultGatway={defaultGatway} /> 
 
-                <SearchNFTMainXS originUrl={originUrl}/>
+                <SearchNFTMainXS defaultGatway={defaultGatway}/>
             </div>
             <BrowseSitesHelper />
         </div>
