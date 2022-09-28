@@ -32,7 +32,6 @@ See live version in [esteroids.eth.limo](https://esteroids.eth.limo)
 ![Site screenshot](./docs/images/site_screenshot.jpg)
 
 
-
 ## Installation
 To install all the dependencies run:
 
@@ -45,6 +44,15 @@ Then you can run the webapp locally with:
 or build a static version of it with: 
 
 ```yarn build```
+
+## Versioning
+Esteroids App versioning consists of three letters, in the form `Vx.y.z`, where
+
+- a change of `x` is done in case of a new milestone,
+- a change of `y` is done in case of a new major feature,
+- a change of `z` is done in case of new small features, patches, or bug fixes.
+
+The first version is `V0.1.0` marking the beta version of Esteroids App. The reason we begin from Beta is due to the fact that Esteroids App Alpha had a different code base. 
 
 ## Getting help
 If you have questions, concerns, bug reports, etc, please open an issue in this repository's Issue Tracker, send us an email to contact@esteroids.xyz or come to our [Discord](https://discord.gg/9c2EWzjFzY).

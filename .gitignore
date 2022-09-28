@@ -24,17 +24,22 @@ yarn-debug.log*
 yarn-error.log*
 
 # data
-/public/images/ext
-/public/images/dwebsite_of_the_week
+
 /src/data/ens_dict.js
 /src/data/dwebsite_of_the_week.json
-/src/components/dev/*
+/src/data/current_version.txt
 
-public/images/ext
-public/images/dwebsite_of_the_week
 src/data/ens_dict.js
 src/data/dwebsite_of_the_week.json
-src/components/dev/*
+src/data/current_version.txt
+# for windows
 src\\data\\ens_dict.js
+
+/public/images/ext
+/public/images/dwebsite_of_the_week
+public/images/ext
+public/images/dwebsite_of_the_week
+
+
 
 .env

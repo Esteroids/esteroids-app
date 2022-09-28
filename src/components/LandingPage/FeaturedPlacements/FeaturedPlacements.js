@@ -1,19 +1,16 @@
-import GitcoinCampaign from "./GitcoinCampaign";
-import DwebsitesBot from "./DwebsitesBot";
-import DwebServicesPlacement from "./DwebServices";
+import GitcoinCampaign from './GitcoinCampaign'
+import DwebsitesBot from './DwebsitesBot'
+import DwebServicesPlacement from './DwebServices'
 
-const FEATURED_PLACEMENTS = [DwebsitesBot, GitcoinCampaign, DwebServicesPlacement];
+const FEATURED_PLACEMENTS = [DwebsitesBot, GitcoinCampaign, DwebServicesPlacement]
 
-const SHOW_STRATEGY = 'random';
+const SHOW_STRATEGY = 'random'
 
 const FeaturedPlacements = (props) => {
+  const Placement =
+    SHOW_STRATEGY === 'random' && FEATURED_PLACEMENTS[Math.floor(Math.random() * FEATURED_PLACEMENTS.length)]
 
-    const Placement = SHOW_STRATEGY==='random' && FEATURED_PLACEMENTS[Math.floor(Math.random()*FEATURED_PLACEMENTS.length)];
-
-    return (
-      <Placement  {...props} />
-    );
+  return <Placement {...props} />
 }
 
-export default FeaturedPlacements;
-
+export default FeaturedPlacements
