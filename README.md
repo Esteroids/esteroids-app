@@ -13,6 +13,7 @@
 * [Introduction](#introduction)
 * [Web App](#web-app)
 * [Installation](#installation)
+* [Versioning](#versioning)
 * [Getting help](#getting-help)
 * [Getting involved](#getting-involved)
 * [License](#license)
@@ -29,7 +30,7 @@ Esteroids Web App is a React App. It has client side only, does not rely on any 
 
 See live version in [esteroids.eth.limo](https://esteroids.eth.limo)
 
-![Site screenshot](./docs/images/site_screenshot.jpg)
+![Site screenshot](./docs/images/esteroids-screenshot.jpg)
 
 
 ## Installation
