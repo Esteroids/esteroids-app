@@ -4,13 +4,14 @@ const DEFAULT_TITLE = TITLE_ENDING;
 
 const ROUTE_TITLES = {
     '/': { pageTitle: TITLE_ENDING},
-    '/new': { pageTitle: 'Browse newely created dWebsites - ' + TITLE_ENDING},
-    '/popular': { pageTitle: 'Browse popular dWebsites - ' + TITLE_ENDING},
-    '/recent': { pageTitle: 'Browse recently updated dWebsites - ' + TITLE_ENDING},
+    '/new': { pageTitle: 'Newely created dWebsites - ' + TITLE_ENDING},
+    '/popular': { pageTitle: 'Popular dWebsites - ' + TITLE_ENDING},
+    '/recent': { pageTitle: 'Recently updated dWebsites - ' + TITLE_ENDING},
     '/all': { pageTitle: 'Browse dWebsites - ' + TITLE_ENDING},
     '/search': { pageTitle: 'Search Results - ' + TITLE_ENDING },
     '/about': { pageTitle: 'About - ' + TITLE_ENDING},
-    '/privacy': { pageTitle: 'Privacy Policy - ' + TITLE_ENDING }
+    '/privacy': { pageTitle: 'Privacy Policy - ' + TITLE_ENDING },
+    '/competition': { pageTitle: 'Esteroids .eth Websites Competition' }
 }
 
 const titleHandler = {

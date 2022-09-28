@@ -2,10 +2,6 @@ function About() {
 
     return (
         <div className="container info-page">
-      
-            <div className="position-absolute about-image-xxl d-none d-xxl-block"> 
-                <img src="./images/about_image.png" alt=""/>
-            </div>
 
             <div className="row py-3 px-3 info-body"> 
                 <div className="mw-640px">
@@ -22,7 +18,11 @@ function About() {
 
                     <p>Join us in a journey to see how the dWebsite ecosystem is being built site-by-site, dApp by dApp, NFT by NFT.</p>
 
-                    <p className="text-success"> <img src="../images/twitter.svg" alt="Twitter"/> Follow us in <a href="https://twitter.com/e_steroids">Twitter</a> to get more dWebsites new</p>
+                    <p className="text-success"> 
+                        <svg width="24" height="24" version="2.0" fill="#000000" alt="Twitter">
+                            <use href="#twitter" />
+                        </svg> 
+                         Follow us in <a href="https://twitter.com/e_steroids">Twitter</a> to get more dWebsites new</p>
 
                     <p  className="text-success">✉️ write us in <a href="mailto:contact@esteroids.xyz">contact@esteroids.xyz</a>.</p>
                 </div>

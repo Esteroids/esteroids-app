@@ -2,9 +2,7 @@ function PrivacyPolicy() {
 
         return (
 <div className="container  info-page">
-        <div className="position-absolute about-image-xxl d-none d-xxl-block"> 
-                <img src="./images/about_image.png" alt="Computer network"/>
-        </div>
+
 
         <div className="row py-3 px-3 info-body"> 
             <div className="mw-640px">
