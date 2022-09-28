@@ -1,30 +1,25 @@
-import * as React from "react";
+import * as React from 'react'
 
-import useAnalytics from "../hooks/useAnalytics";
+import useAnalytics from '../hooks/useAnalytics'
 
+const AnalyticsContext = React.createContext()
 
-const AnalyticsContext = React.createContext();
+function AnalyticsContextProvider({
+  children,
+  topic = 'ESTEROIDS_ANALYTICS',
+  ipfsNodeUrl = process.env.REACT_APP_IPFS_NODE,
+}) {
+  const { add } = useAnalytics({ ipfsNodeUrl, topic })
 
-function AnalyticsContextProvider({ children, topic='ESTEROIDS_ANALYTICS', ipfsNodeUrl=process.env.REACT_APP_IPFS_NODE }) {
-
-  const {add} = useAnalytics({ipfsNodeUrl, topic})
-
-
-
-  return (
-    <AnalyticsContext.Provider value={add}>
-        {children}
-    </AnalyticsContext.Provider>
-  );
+  return <AnalyticsContext.Provider value={add}>{children}</AnalyticsContext.Provider>
 }
 
-const useAnalyticsContext = () => { 
-    const context = React.useContext(AnalyticsContext)
+const useAnalyticsContext = () => {
+  const context = React.useContext(AnalyticsContext)
   if (context === undefined) {
     throw new Error('useAnalyticsContext must be used within a AnalyticsContextProvider')
   }
-  return context 
+  return context
 }
 
-
-export { AnalyticsContextProvider, useAnalyticsContext };
+export { AnalyticsContextProvider, useAnalyticsContext }

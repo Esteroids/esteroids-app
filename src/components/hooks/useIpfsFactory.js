@@ -1,5 +1,5 @@
-import {useState, useEffect} from 'react'; 
-import { create } from 'ipfs-http-client';
+import { useState, useEffect } from 'react'
+import { create } from 'ipfs-http-client'
 
 let ipfs = null
 
@@ -13,7 +13,7 @@ let ipfs = null
  * so use-ipfs calls can grab it from there rather than expecting
  * it to be passed in.
  */
-export default function useIpfsFactory (ipfsHttpNode) {
+export default function useIpfsFactory(ipfsHttpNode) {
   const [isIpfsReady, setIpfsReady] = useState(Boolean(ipfs))
   const [ipfsInitError, setIpfsInitError] = useState(null)
 
@@ -23,20 +23,19 @@ export default function useIpfsFactory (ipfsHttpNode) {
     // Hence we delegate to a async fn rather than making the param an async fn.
 
     startIpfs(ipfsHttpNode)
-    return function cleanup () {
+    return function cleanup() {
       if (ipfs && ipfs.stop) {
-        ipfs.stop().catch(err => console.error(err))
+        ipfs.stop().catch((err) => console.error(err))
         ipfs = null
         setIpfsReady(false)
       }
     }
   }, [ipfsHttpNode])
 
-  async function startIpfs (ipfsHttpNode) {
-    if (ipfs) {
-    } else if (window.ipfs && window.ipfs.enable) {
+  async function startIpfs(ipfsHttpNode) {
+    if (window.ipfs && window.ipfs.enable) {
       ipfs = await window.ipfs.enable({ commands: ['id'] })
-    } else {
+    } else if (!ipfs) {
       try {
         ipfs = await create(ipfsHttpNode)
       } catch (error) {
