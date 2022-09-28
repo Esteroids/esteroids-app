@@ -12,7 +12,6 @@
 ## Table of contents
 * [Introduction](#introduction)
 * [Web App](#web-app)
-* [Dependencies](#dependencies)
 * [Installation](#installation)
 * [Getting help](#getting-help)
 * [Getting involved](#getting-involved)
@@ -33,11 +32,6 @@ See live version in [esteroids.eth.limo](https://esteroids.eth.limo)
 ![Site screenshot](./docs/images/site_screenshot.jpg)
 
 
-## Dependencies
-To build Esteroids Web App you need to have installed on your machine:
-- Node.js v14.16.1 
-- Npm 6.13.7
-- Yarn v1.22.5
 
 ## Installation
 To install all the dependencies run:
