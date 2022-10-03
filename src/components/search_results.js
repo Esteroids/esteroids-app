@@ -1,5 +1,5 @@
 import { dwebData } from '../data/ens_dict.js'
-import SiteCard from './site_card'
+import SiteCard from './SiteCard/SiteCard'
 import React, { useState, useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import { searchResults } from './search/Search.js'
@@ -28,7 +28,7 @@ function Cards(props) {
 
   return (
     <div>
-      <div className='row'>
+      <div className='row cards row w-100 d-flex p-0'>
         <div className='col-md-9'>
           <div className='row'>{cards}</div>
           <LoadMore

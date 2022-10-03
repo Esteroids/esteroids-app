@@ -36,8 +36,8 @@ const EnsSite = {
   },
   getScreenshotUrl: function (ens_site) {
     if (
-      ens_site[this.HAS_SCREENSHOT] !== undefined &&
-      ens_site[this.HAS_SCREENSHOT] === 1 &&
+      (ens_site[this.HAS_SCREENSHOT] === undefined ||
+        ens_site[this.HAS_SCREENSHOT] === 1) &&
       ens_site[this.NAME] !== undefined
     ) {
       return './images/ext/screenshots/' + ens_site[this.NAME] + '_screenshot.jpg'
@@ -45,9 +45,21 @@ const EnsSite = {
       return ''
     }
   },
+  getScreenshotUrlSquare: function (ens_site) {
+    if (
+      (ens_site[this.HAS_SCREENSHOT] === undefined ||
+        ens_site[this.HAS_SCREENSHOT] === 1) &&
+      ens_site[this.NAME] !== undefined
+    ) {
+      return './images/ext/screenshots/' + ens_site[this.NAME] + '_square_screenshot.jpg'
+    } else {
+      return ''
+    }
+  },
   NAME: 'n',
   DESCRIPTION: 'd',
   TITLE: 't',
+  UPDATE: 'u',
   HAS_SCREENSHOT: 'sc',
 }
 

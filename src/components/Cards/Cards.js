@@ -1,4 +1,4 @@
-import SiteCard from '../site_card'
+import SiteCard from '../SiteCard/SiteCard'
 import { dwebData } from '../../data/ens_dict.js'
 
 const Cards = (props) => {
@@ -10,12 +10,12 @@ const Cards = (props) => {
         site={dwebData['sites'][props.websites[i]]}
         key={i}
         defaultGatway={props.defaultGatway}
-        competition={props.competition}
+        hotCategory={props.hotCategory}
       />,
     )
   }
 
-  return <div className='row'>{cards}</div>
+  return <div className='cards row w-100 d-flex p-0'>{cards}</div>
 }
 
 export default Cards
