@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
 import NavBarMainPage from './NavBarMainPage'
 import NavBarSecondaryPage from './NavBarSecondaryPage'
-
-const MAIN_ROUTES = ['/', '/hot', '/new', '/recent']
+import { MAIN_PAGE_ROUTES } from '../constants/routes'
 
 function Navbar(props) {
-  const home = MAIN_ROUTES.indexOf(props.location.pathname) !== -1 ? true : false
+  const home = MAIN_PAGE_ROUTES.indexOf(props.location.pathname) !== -1 ? true : false
   let initSearchTerm = new URLSearchParams(props.location && props.location.search).get('term')
   if (!initSearchTerm) {
     initSearchTerm = ''

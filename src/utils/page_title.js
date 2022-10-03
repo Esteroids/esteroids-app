@@ -5,8 +5,6 @@ const ROUTE_TITLES = {
   '/': { pageTitle: TITLE_ENDING },
   '/new': { pageTitle: 'Newely created dWebsites - ' + TITLE_ENDING },
   '/hot': { pageTitle: 'Hot dWebsites - ' + TITLE_ENDING },
-  '/recent': { pageTitle: 'Recently updated dWebsites - ' + TITLE_ENDING },
-  '/all': { pageTitle: 'Browse dWebsites - ' + TITLE_ENDING },
   '/search': { pageTitle: 'Search Results - ' + TITLE_ENDING },
   '/about': { pageTitle: 'About - ' + TITLE_ENDING },
   '/privacy': { pageTitle: 'Privacy Policy - ' + TITLE_ENDING },

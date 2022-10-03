@@ -88,8 +88,8 @@ function About() {
           <p className='text-success'>
             <svg width='24' height='24' version='2.0' fill='#000000' alt='Twitter'>
               <use href='#twitter' />
-            </svg>
-            {' '}Follow us in{' '}
+            </svg>{' '}
+            Follow us in{' '}
             <a href='https://twitter.com/e_steroids' target='_blank' rel='noreferrer'>
               Twitter
             </a>

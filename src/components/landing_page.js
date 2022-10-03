@@ -14,7 +14,6 @@ function getCategoryFromLocation(location) {
       return DEFAULT_BROWSE_CATEGORY
     } else {
       let category = location.pathname.substr(1)
-
       return category
     }
   }

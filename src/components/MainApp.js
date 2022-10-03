@@ -10,8 +10,8 @@ import LandingPage from './landing_page'
 import Svgs from './Svgs/Svgs'
 import { useAnalyticsContext } from './contexts/Analytics'
 import EnsSite from '../utils/ens_sites'
+import { MAIN_PAGE_ROUTES } from './constants/routes'
 
-const BROWSE_PATHS = ['/', '/hot', '/new', '/recent']
 
 const MainApp = () => {
   const location = useLocation()
@@ -34,7 +34,7 @@ const MainApp = () => {
       <Svgs />
 
       <Switch>
-        <Route exact path={BROWSE_PATHS}>
+        <Route exact path={MAIN_PAGE_ROUTES}>
           <LandingPage defaultGatway={defaultGatway} />
         </Route>
         <Route path='/search'>
