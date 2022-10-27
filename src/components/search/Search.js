@@ -33,7 +33,7 @@ const filterResults = (searchTerm, sites) => {
   return only_indexes_arr
 }
 
-const searchResults = (searchTerm, sites) => {
+const searchResultsUtils = (searchTerm, sites) => {
   const searchType = getSearchType(searchTerm)
   let results
 
@@ -49,4 +49,4 @@ const searchResults = (searchTerm, sites) => {
   return results
 }
 
-export { searchResults }
+export { searchResultsUtils }

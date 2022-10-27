@@ -24,6 +24,9 @@ const getLink = (site, defaultGatway) => {
 }
 
 const getAddress = (site) => {
+  if (!site[EnsSite.NAME]){
+    console.log(site)
+  }
   return EnsSite.getDisplaySiteName(site[EnsSite.NAME])
 }
 
@@ -32,11 +35,9 @@ const getColumnSize = (location) => {
   else return 'col-xl-3 col-lg-4 col-sm-6'
 }
 
-
 const SiteCard = (props) => {
   const defaultGatway = props.defaultGatway
   const { isConnected, library } = useWeb3Context()
-
 
   const location = props.location
   const site = props.site
@@ -47,7 +48,6 @@ const SiteCard = (props) => {
   const siteLink = (!isConnected && getLink(site, defaultGatway)) || '#'
   const siteDescription = site[EnsSite.DESCRIPTION]
   const siteTitle = site[EnsSite.TITLE]
-  
 
   const screenshotUrl = getScreenshotUrl(site)
 

@@ -20,6 +20,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "react-tooltip": "^4.2.21",
+    "swr": "^1.3.0",
     "web3modal": "^1.9.8"
   },
   "scripts": {
@@ -68,7 +69,7 @@
     "prettier": "^2.7.1",
     "source-map-explorer": "^2.5.2"
   },
-  "engines" : { 
-    "node" : ">=16.0.0 "
+  "engines": {
+    "node": ">=16.0.0 "
   }
 }

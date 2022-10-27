@@ -1,19 +1,18 @@
-import { dwebData } from '../data/ens_dict.js'
 import SiteCard from './SiteCard/SiteCard'
 import React, { useState, useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
-import { searchResults } from './search/Search.js'
+import { searchResultsUtils } from './search/Search.js'
 import { Helmet } from 'react-helmet'
 import titleHandler from '../utils/page_title'
 import { useAnalyticsContext } from './contexts/Analytics.js'
-
 import SearchWNFTPlacement from './wnft/SearchWNFTPlacement.js'
 import SearchResultsDescription from './SearchResults/SearchResultsDescription.js'
-
-const DEFAULT_SEARCH_RESULTS_NUMBER = 12
-const LOAD_MORE_SEARCH_RESULTS_NUMBER = 6
+import { DEFAULT_SEARCH_RESULTS_NUMBER, LOAD_MORE_SEARCH_RESULTS_NUMBER } from './constants/search_results'
+import useSitesData from './hooks/useSitesData.js'
+import LoadingEsteroidsIcon from './Svgs/LoadingEsteroidsIcon.js'
 
 function Cards(props) {
+  const { dwebData } = useSitesData()
   var cards = []
   for (let i = 0; i < props.currentResultsShown; i++) {
     cards.push(
@@ -64,9 +63,11 @@ const LoadMore = ({ totalResults, currentResultsShown, setCurrentResultsShown })
 }
 
 function SearchResults({ defaultGatway }) {
-  const [currentResultsShown, setCurrentResultsShown] = useState(DEFAULT_SEARCH_RESULTS_NUMBER)
+  const [currentResultsShown, setCurrentResultsShown] = useState(0)
+  const [searchResults, setSearchResults] = useState([])
+
   let location = useLocation()
-  let searchTerm = new URLSearchParams(location.search).get('term')
+  const searchTerm = new URLSearchParams(location.search).get('term')
   const add = useAnalyticsContext()
 
   useEffect(() => {
@@ -77,12 +78,18 @@ function SearchResults({ defaultGatway }) {
     }
   }, [searchTerm, add])
 
-  const search_results = searchResults(searchTerm, dwebData['sites'])
+  const { dwebData, isLoading } = useSitesData()
 
-  let resultsShown = Math.min(Math.max(DEFAULT_SEARCH_RESULTS_NUMBER, currentResultsShown), search_results.length)
-  if (resultsShown !== currentResultsShown) {
-    setCurrentResultsShown(resultsShown)
-  }
+  useEffect(() => {
+    if (!isLoading && dwebData) {
+      const search_results = searchResultsUtils(searchTerm, dwebData['sites'])
+      setSearchResults(search_results)
+      let resultsShown = Math.min(Math.max(DEFAULT_SEARCH_RESULTS_NUMBER, currentResultsShown), search_results.length)
+      if (resultsShown !== currentResultsShown) {
+        setCurrentResultsShown(resultsShown)
+      }
+    }
+  }, [dwebData, isLoading, searchTerm])
 
   let newTitle = titleHandler.getSearchTitle(searchTerm)
   const pageHeaderTitle = (
@@ -93,13 +100,22 @@ function SearchResults({ defaultGatway }) {
     </Helmet>
   )
 
+  if (isLoading || !dwebData) {
+    return (
+      <div className='d-flex flex-row justify-content-center'>
+        {pageHeaderTitle}
+        <LoadingEsteroidsIcon />
+      </div>
+    )
+  }
+
   return (
     <div className='container'>
       {pageHeaderTitle}
-      <SearchResultsDescription totalResults={search_results.length} searchTerm={searchTerm} />
+      <SearchResultsDescription totalResults={searchResults.length} searchTerm={searchTerm} />
       <Cards
         searchTerm={searchTerm}
-        searchResults={search_results}
+        searchResults={searchResults}
         currentResultsShown={currentResultsShown}
         defaultGatway={defaultGatway}
         setCurrentResultsShown={setCurrentResultsShown}

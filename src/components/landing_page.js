@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import LandingScreen from './landing_screen'
-import Browse from './browse'
+import Browse from './Browse/Browse'
 import { useLocation } from 'react-router-dom'
 import ScrollToTop from './scroll_to_top'
 

@@ -39,7 +39,8 @@ src\\data\\ens_dict.js
 /public/images/dwebsite_of_the_week
 public/images/ext
 public/images/dwebsite_of_the_week
-
+public/data
+/public/data
 
 
 .env

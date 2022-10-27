@@ -782,3 +782,10 @@ button.close {
     overflow-x: auto;     
     -webkit-overflow-scrolling: touch;
 }
+
+@media only screen and (max-width: 576px) {
+
+    .menu-category {
+        justify-content: center!important;
+    }
+}

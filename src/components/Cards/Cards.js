@@ -1,12 +1,13 @@
 import SiteCard from '../SiteCard/SiteCard'
-import { dwebData } from '../../data/ens_dict.js'
+import useSitesData from '../hooks/useSitesData'
 
 const Cards = (props) => {
   var cards = []
+
+  const { dwebData }  = useSitesData()
   for (let i = 0; i < props.cards_number; i++) {
     cards.push(
       <SiteCard
-        myIndex={i}
         site={dwebData['sites'][props.websites[i]]}
         key={i}
         defaultGatway={props.defaultGatway}

@@ -12,7 +12,6 @@ import { useAnalyticsContext } from './contexts/Analytics'
 import EnsSite from '../utils/ens_sites'
 import { MAIN_PAGE_ROUTES } from './constants/routes'
 
-
 const MainApp = () => {
   const location = useLocation()
   const add = useAnalyticsContext()

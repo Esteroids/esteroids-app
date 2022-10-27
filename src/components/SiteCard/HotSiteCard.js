@@ -2,17 +2,18 @@ import ImagePlaceholder from './ImagePlaceholder'
 import LazyLoad from 'react-lazyload'
 import EnsSite from '../../utils/ens_sites'
 
-
-
 const dateDisplay = (unixtimestamp) => {
-  const createDate = new Date(unixtimestamp*1000)
-  const currentDay = createDate.getDate();
-  const currentYear = createDate.getFullYear();
-  const nameOfMonthUS = new Intl.DateTimeFormat('en-US', {month: 'short'}).format(
-    createDate,
-  );
-
-  return currentDay + '-' + nameOfMonthUS + '-' + currentYear;
+  try{
+    const createDate = new Date(unixtimestamp * 1000)
+    const currentDay = createDate.getDate()
+    const currentYear = createDate.getFullYear()
+    const nameOfMonthUS = new Intl.DateTimeFormat('en-US', { month: 'short' }).format(createDate)
+  
+    return currentDay + '-' + nameOfMonthUS + '-' + currentYear
+  }catch(e){
+    return ''
+  }
+  
 }
 
 const getScreenshotUrl = (site) => {
@@ -35,12 +36,10 @@ const HotSiteCardImg = (props) => {
 }
 
 const HotSiteCard = (props) => {
-
   const site = props.site
   const siteCreateDate = site[EnsSite.UPDATE]
 
   const screenshotUrl = getScreenshotUrl(site)
-
 
   return (
     <div className={'col-lg-4 col-sm-6 d-flex'}>
