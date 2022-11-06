@@ -7,7 +7,7 @@ import { searchResults } from './search/Search.js'
 import { TAG_SEARCH_TERMS } from './constants/tags.js'
 
 const DEFAULT_NUMBER_OF_CARDS = 12
-const LOAD_MORE_CARDS = 8
+const LOAD_MORE_CARDS = 12
 
 
 function getTagDwebsites(tag, allDwebsite){

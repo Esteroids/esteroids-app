@@ -5,14 +5,18 @@ import EnsSite from '../../utils/ens_sites'
 
 
 const dateDisplay = (unixtimestamp) => {
-  const createDate = new Date(unixtimestamp*1000)
-  const currentDay = createDate.getDate();
-  const currentYear = createDate.getFullYear();
-  const nameOfMonthUS = new Intl.DateTimeFormat('en-US', {month: 'short'}).format(
-    createDate,
-  );
+  try{
+    const createDate = new Date(unixtimestamp*1000)
+    const currentDay = createDate.getDate();
+    const currentYear = createDate.getFullYear();
+    const nameOfMonthUS = new Intl.DateTimeFormat('en-US', {month: 'short'}).format(
+      createDate,
+    );
 
-  return currentDay + '-' + nameOfMonthUS + '-' + currentYear;
+    return currentDay + '-' + nameOfMonthUS + '-' + currentYear;
+    }catch(e){
+      return ''
+    }
 }
 
 const getScreenshotUrl = (site) => {
