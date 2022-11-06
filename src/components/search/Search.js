@@ -1,14 +1,18 @@
 import getSearchRank from '../../utils/search_rank'
-import { searchByNameLength, isNameLengthSearch, getNameLengthSearched } from './SearchByNameLen'
+import { searchByNameLength, isNameLengthSearch } from './SearchByNameLen'
+import { searchByEthName, isEthNameSearch } from './SearchByEthName'
 
 const SEARCH_TYPE = {
   REGULAR: 1,
   BY_LENGTH: 2,
+  BY_ETH_NAME: 3,
 }
 
 const getSearchType = (searchTerm) => {
   if (isNameLengthSearch(searchTerm)) {
     return SEARCH_TYPE.BY_LENGTH
+  }else if (isEthNameSearch(searchTerm))  {
+    return SEARCH_TYPE.BY_ETH_NAME
   } else {
     return SEARCH_TYPE.REGULAR
   }
@@ -33,18 +37,25 @@ const filterResults = (searchTerm, sites) => {
   return only_indexes_arr
 }
 
-const searchResults = (searchTerm, sites) => {
-  const searchType = getSearchType(searchTerm)
+const cleanSearchTerm = (searchTerm) => searchTerm.trim();
+
+const searchResults = (searchTermRaw, sites) => {
+  const searchTerm = cleanSearchTerm(searchTermRaw);
+  const searchType = getSearchType(searchTerm);
   let results
 
   switch (searchType) {
     case SEARCH_TYPE.BY_LENGTH:
-      results = searchByNameLength(sites, getNameLengthSearched(searchTerm))
+      results = searchByNameLength(sites, searchTerm)
       break
+    case SEARCH_TYPE.BY_ETH_NAME:
+        results = searchByEthName(sites, searchTerm)
+        results = results.concat(filterResults(searchTerm, sites))
+        break
     case SEARCH_TYPE.REGULAR:
     default:
       results = filterResults(searchTerm, sites)
-    // code block
+   
   }
   return results
 }

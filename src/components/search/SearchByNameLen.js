@@ -1,8 +1,9 @@
 import EnsSite from '../../utils/ens_sites'
 
-const nameLenSearchRE = /name-length\s*:\s*(\d+)/i
+const nameLenSearchRE = /^name-length\s*:\s*(\d+)$/i
 
-const searchByNameLength = (sites, nameLength) => {
+const searchByNameLength = (sites, searchTerm) => {
+  const nameLength = getNameLengthSearched(searchTerm)
   const nameLengthInt = parseInt(nameLength)
 
   const results = sites.reduce(function (result, site, siteIndex) {
