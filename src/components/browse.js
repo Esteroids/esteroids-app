@@ -9,31 +9,27 @@ import { TAG_SEARCH_TERMS } from './constants/tags.js'
 const DEFAULT_NUMBER_OF_CARDS = 12
 const LOAD_MORE_CARDS = 12
 
-
-function getTagDwebsites(tag, allDwebsite){
-  
+function getTagDwebsites(tag, allDwebsite) {
   let websites = searchResults(tag, allDwebsite)
-  const otherSearchTerms = TAG_SEARCH_TERMS[tag];
-  if (otherSearchTerms){
+  const otherSearchTerms = TAG_SEARCH_TERMS[tag]
+  if (otherSearchTerms) {
     for (const searchTerm of otherSearchTerms) {
       websites.concat(searchResults(searchTerm, allDwebsite))
     }
-    websites = [...new Set(websites)];
+    websites = [...new Set(websites)]
   }
-  
-  return websites;
+
+  return websites
 }
 
 const isCategoryTag = (category) => category.indexOf('tag/') !== -1
-
 
 function getDwebsites(category) {
   const categoryData = (category === 'hot' && 'popular') || category
   let websites
   if (isCategoryTag(category)) {
     const tag = category.replace('tag/', '')
-    websites = getTagDwebsites(tag, dwebData['sites']);
-    
+    websites = getTagDwebsites(tag, dwebData['sites'])
   } else {
     websites = dwebData[categoryData]
   }

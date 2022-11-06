@@ -1,1 +1,1 @@
-export const TAG_SEARCH_TERMS = { 'dao': ['daos'], 'nft': ['nfts'], 'blog': ['blogs']}
+export const TAG_SEARCH_TERMS = { dao: ['daos'], nft: ['nfts'], blog: ['blogs'] }
