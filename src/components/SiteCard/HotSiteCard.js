@@ -64,7 +64,7 @@ const HotSiteCard = (props) => {
             <div className='card-site-description card-site-description-hotsite'>{props.siteDescription}</div>
             <div className={'py-2 d-flex flex-row justify-content-between align-items-baseline'}>
               <div className='card-site-link align-items-baseline'>{props.siteAddress}</div>
-              <div className='text-dark'>Created on {dateDisplay(siteCreateDate)}</div>
+              <div className='text-dark'>Added at {dateDisplay(siteCreateDate)}</div>
             </div>
           </div>
         </div>
