@@ -59,11 +59,12 @@ function PrivacyPolicy() {
             esteroids.eth with regard to the information shared and/or collected on eSteroids. This policy is not
             applicable to any information collected offline or via channels other than esteroids.eth.
           </p>
-        </div> {/* col-md-6 */}
+        </div>{' '}
+        {/* col-md-6 */}
         <div className='col-md-6 text-center d-none d-sm-block'>
-          <img  src={LandingPageImg} 
-                alt='The logo of Esteroids in three different colors' />
-        </div> {/* col-md-6 */}
+          <img src={LandingPageImg} alt='The logo of Esteroids in three different colors' />
+        </div>{' '}
+        {/* col-md-6 */}
       </div>
     </div>
   )

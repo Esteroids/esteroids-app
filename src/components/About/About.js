@@ -6,14 +6,14 @@ function About() {
   return (
     <div className='container info-page'>
       <div className='row py-3 px-3 info-body'>
-        <div className="col-md-6">
+        <div className='col-md-6'>
           <div>
             <h2 className='text-primary'> About </h2>
             <p>Esteroids (esteroids.eth) is a community search engine for .eth websites! </p>
 
             <p>
-              While the .eth web previously offered a variety of innovative .eth websites, it lacked the tools to collect,
-              explore and showcase these websites to the community.
+              While the .eth web previously offered a variety of innovative .eth websites, it lacked the tools to
+              collect, explore and showcase these websites to the community.
             </p>
 
             <p>
@@ -63,13 +63,14 @@ function About() {
             </p>
 
             <p>
-              Our mission is to make esteroids.eth into a community search engine, meaning it will be a .eth search engine
-              owned and governed by the .eth web community.{' '}
+              Our mission is to make esteroids.eth into a community search engine, meaning it will be a .eth search
+              engine owned and governed by the .eth web community.{' '}
             </p>
 
             <p>
               <span style={{ fontWeight: 'bold' }}>
-                See our <a href="https://docs.esteroids.xyz/">docs</a> for more information on what Esteroids is and how it works.
+                See our <a href='https://docs.esteroids.xyz/'>docs</a> for more information on what Esteroids is and how
+                it works.
               </span>
             </p>
 
@@ -106,19 +107,23 @@ function About() {
 
             <p className='text-success'>
               ✉️ Write us in{' '}
-              <b><a href='mailto:contact@esteroids.xyz' target='_blank' rel='noreferrer'>
-                contact@esteroids.xyz
-              </a></b>
+              <b>
+                <a href='mailto:contact@esteroids.xyz' target='_blank' rel='noreferrer'>
+                  contact@esteroids.xyz
+                </a>
+              </b>
               .
             </p>
             <Version />
           </div>
-        </div> {/* col-md-6 */}
+        </div>{' '}
+        {/* col-md-6 */}
         <div className='col-md-6 text-center d-none d-sm-block'>
-          <img  src={LandingPageImg} 
-                alt='The logo of Esteroids in three different colors' />
-        </div> {/* col-md-6 */}
-      </div> {/* row */}
+          <img src={LandingPageImg} alt='The logo of Esteroids in three different colors' />
+        </div>{' '}
+        {/* col-md-6 */}
+      </div>{' '}
+      {/* row */}
     </div>
   )
 }
