@@ -2223,7 +2223,7 @@ export const dwebData = {
       sc: 1,
     },
     { n: 'clair', t: 'Claim Clairicature NFT', d: '', u: '2022-01-31T13:10:26+00:00', sc: 1 },
-    { n: 'ENS', t: 'ENS', d: '', u: '2022-01-31T13:10:22+00:00', sc: 1 },
+    { n: 'ens', t: 'ENS', d: '', u: '2022-01-31T13:10:22+00:00', sc: 1 },
     { n: 'arkaitz', t: 'arkaitzdev', d: '', u: '2022-01-31T13:10:21+00:00', sc: 1 },
     {
       n: 'nilaspaces',

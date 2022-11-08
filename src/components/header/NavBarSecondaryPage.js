@@ -64,7 +64,7 @@ function NavBarSecondaryPage(props) {
           </div>
         </form>
       </div>
-      <div>
+      <div className='ms-auto'>
         <Web3Button />
       </div>
     </nav>
