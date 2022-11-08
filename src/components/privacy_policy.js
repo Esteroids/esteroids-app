@@ -1,8 +1,10 @@
+import LandingPageImg from '../images/esteroids_3_logos.png'
+
 function PrivacyPolicy() {
   return (
     <div className='container  info-page'>
       <div className='row py-3 px-3 info-body'>
-        <div className='mw-640px'>
+        <div className='col-md-6'>
           <h2> Privacy Statement </h2>
           <p>
             At Esteroids, accessible from esteroids.eth, one of our main priorities is the privacy of our dWebsite
@@ -57,7 +59,11 @@ function PrivacyPolicy() {
             esteroids.eth with regard to the information shared and/or collected on eSteroids. This policy is not
             applicable to any information collected offline or via channels other than esteroids.eth.
           </p>
-        </div>
+        </div> {/* col-md-6 */}
+        <div className='col-md-6 text-center d-none d-sm-block'>
+          <img  src={LandingPageImg} 
+                alt='The logo of Esteroids in three different colors' />
+        </div> {/* col-md-6 */}
       </div>
     </div>
   )
