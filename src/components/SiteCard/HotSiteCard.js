@@ -2,21 +2,17 @@ import ImagePlaceholder from './ImagePlaceholder'
 import LazyLoad from 'react-lazyload'
 import EnsSite from '../../utils/ens_sites'
 
-
-
 const dateDisplay = (unixtimestamp) => {
-  try{
-    const createDate = new Date(unixtimestamp*1000)
-    const currentDay = createDate.getDate();
-    const currentYear = createDate.getFullYear();
-    const nameOfMonthUS = new Intl.DateTimeFormat('en-US', {month: 'short'}).format(
-      createDate,
-    );
+  try {
+    const createDate = new Date(unixtimestamp * 1000)
+    const currentDay = createDate.getDate()
+    const currentYear = createDate.getFullYear()
+    const nameOfMonthUS = new Intl.DateTimeFormat('en-US', { month: 'short' }).format(createDate)
 
-    return currentDay + '-' + nameOfMonthUS + '-' + currentYear;
-    }catch(e){
-      return ''
-    }
+    return currentDay + '-' + nameOfMonthUS + '-' + currentYear
+  } catch (e) {
+    return ''
+  }
 }
 
 const getScreenshotUrl = (site) => {
@@ -39,12 +35,10 @@ const HotSiteCardImg = (props) => {
 }
 
 const HotSiteCard = (props) => {
-
   const site = props.site
   const siteCreateDate = site[EnsSite.UPDATE]
 
   const screenshotUrl = getScreenshotUrl(site)
-
 
   return (
     <div className={'col-lg-4 col-sm-6 d-flex'}>
@@ -64,7 +58,7 @@ const HotSiteCard = (props) => {
             <div className='card-site-description card-site-description-hotsite'>{props.siteDescription}</div>
             <div className={'py-2 d-flex flex-row justify-content-between align-items-baseline'}>
               <div className='card-site-link align-items-baseline'>{props.siteAddress}</div>
-              <div className='text-dark'>Created on {dateDisplay(siteCreateDate)}</div>
+              <div className='text-dark'>Added at {dateDisplay(siteCreateDate)}</div>
             </div>
           </div>
         </div>

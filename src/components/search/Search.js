@@ -11,7 +11,7 @@ const SEARCH_TYPE = {
 const getSearchType = (searchTerm) => {
   if (isNameLengthSearch(searchTerm)) {
     return SEARCH_TYPE.BY_LENGTH
-  }else if (isEthNameSearch(searchTerm))  {
+  } else if (isEthNameSearch(searchTerm)) {
     return SEARCH_TYPE.BY_ETH_NAME
   } else {
     return SEARCH_TYPE.REGULAR
@@ -37,11 +37,11 @@ const filterResults = (searchTerm, sites) => {
   return only_indexes_arr
 }
 
-const cleanSearchTerm = (searchTerm) => searchTerm.trim();
+const cleanSearchTerm = (searchTerm) => searchTerm.trim()
 
 const searchResults = (searchTermRaw, sites) => {
-  const searchTerm = cleanSearchTerm(searchTermRaw);
-  const searchType = getSearchType(searchTerm);
+  const searchTerm = cleanSearchTerm(searchTermRaw)
+  const searchType = getSearchType(searchTerm)
   let results
 
   switch (searchType) {
@@ -49,13 +49,13 @@ const searchResults = (searchTermRaw, sites) => {
       results = searchByNameLength(sites, searchTerm)
       break
     case SEARCH_TYPE.BY_ETH_NAME:
-        results = searchByEthName(sites, searchTerm)
-        results = results.concat(filterResults(searchTerm, sites))
-        break
+      results = searchByEthName(sites, searchTerm)
+      results = results.concat(filterResults(searchTerm, sites))
+      results = [...new Set(results)]
+      break
     case SEARCH_TYPE.REGULAR:
     default:
       results = filterResults(searchTerm, sites)
-   
   }
   return results
 }

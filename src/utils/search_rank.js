@@ -19,14 +19,13 @@ const getSearchRank = (site, searchTerm) => {
 
   let multiWords
   multiWords = false
-  let words
-  if (searchTerm.indexOf(' ') !== -1) {
+  const words = searchTerm.split(/\W/)
+  if (words.length > 1) {
     multiWords = true
-    words = searchTerm.split(' ')
   }
 
   for (var i in MATCH_BY) {
-    let cleaned_str = site[EnsSite[MATCH_BY[i]]].toLowerCase()
+    const cleaned_str = site[EnsSite[MATCH_BY[i]]].toLowerCase()
     if (cleaned_str.indexOf(searchTerm) !== -1) {
       rank += RANK[MATCH_BY[i]].EXACT
     } else {
