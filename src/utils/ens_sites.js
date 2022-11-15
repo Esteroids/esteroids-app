@@ -54,11 +54,11 @@ const EnsSite = {
       return ''
     }
   },
-  NAME: 'n',
-  DESCRIPTION: 'd',
-  TITLE: 't',
-  UPDATE: 'u',
-  HAS_SCREENSHOT: 'sc',
+  NAME: 0,
+  TITLE: 1,
+  DESCRIPTION: 2,
+  UPDATE: 3,
+  HAS_SCREENSHOT: 4,
 }
 
 export default EnsSite
