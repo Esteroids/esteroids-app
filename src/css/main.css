@@ -1,6 +1,10 @@
 body {
     position:  relative;
-    font-family: Bevellier-Regular;
+    /* font-family: Bevellier-Regular; */
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+    font-family: Bevellier-Variable;
     --text-color-primary: #0040a3;
     --nav-link-hover-color: #262626;
     --nav-link-color: #FFFFFF;
@@ -27,7 +31,7 @@ body[data-theme='dark'] {
     width: 100%;
     height: 100%;
 
-    background-image: url("../images/bg_top.jpg");
+    background-image: url("../images/bg_top.webp");
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: top right;
@@ -37,7 +41,7 @@ body[data-theme='dark'] {
 
 @media (orientation: portrait) {
   .bg-top {
-    background-image: url("../images/bg_top_portrait_small.jpg");
+    background-image: url("../images/bg_top_portrait_small.webp");
     background-size: 500%;
   }
 }
@@ -60,7 +64,7 @@ body[data-theme='dark'] {
     width: 100%;
     height: 100%;
 
-    background: url("../images/bg_bottom.jpg");
+    background: url("../images/bg_bottom.webp");
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: bottom right;
@@ -238,7 +242,11 @@ body[data-theme='dark'] {
 }
 
 .card-site-name {
-    font-family: Bevellier-Regular;
+    /* font-family: Bevellier-Regular; */
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+    font-family: Bevellier-Variable;
     font-size: 1.5em;
     line-height: 25px;
     color: var(--text-color-primary);
@@ -256,7 +264,6 @@ body[data-theme='dark'] {
 }
 
 .card-site-description, a:link .card-site-description, a:visited .card-site-description {
-    font-family: "Times New Roman";
     font-size: 1.1em;
     line-height: 20px;
     color: #000000;
@@ -319,7 +326,11 @@ body[data-theme='dark'] {
 
 .footer-items, .footer-items a, .footer-items a:visited {
     margin: 0px 10px;
-    font-family: Bevellier-Regular;
+    /* font-family: Bevellier-Regular; */
+    font-family: Bevellier-Variable;
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
     font-size: 18px;
     color: var(--text-color-primary);
 }
@@ -490,7 +501,11 @@ body[data-theme='dark'] {
 }
 
 .WotW-header {
-    font-family: Bevellier-Bold;
+    /* font-family: Bevellier-Bold; */
+    font-family: Bevellier-Variable;
+    font-weight: 700;
+    font-display: swap;
+    font-style: normal;
     font-size: 1.3vw; 
     position: absolute;   
     top: 8px;   
@@ -614,7 +629,11 @@ button.close {
 
 
 .landing-page-description {
-    font-family: Bevellier-MediumItalic;
+    /* font-family: Bevellier-MediumItalic; */
+    font-family: Bevellier-Variable;
+    font-weight: 500;
+    font-display: swap;
+    font-style: italic;
     font-size: 1.8em;
     line-height: 1.1em;
     color: var(--text-color-primary);
