@@ -2,7 +2,7 @@ import { dwebData } from '../data/ens_dict.js'
 import SiteCard from './SiteCard/SiteCard'
 import React, { useState, useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
-import { searchResults } from './search/Search.js'
+import { searchResultsUtils } from './search/Search.js'
 import { Helmet } from 'react-helmet'
 import titleHandler from '../utils/page_title'
 import { useAnalyticsContext } from './contexts/Analytics.js'
@@ -10,8 +10,7 @@ import { useAnalyticsContext } from './contexts/Analytics.js'
 import SearchWNFTPlacement from './wnft/SearchWNFTPlacement.js'
 import SearchResultsDescription from './SearchResults/SearchResultsDescription.js'
 
-const DEFAULT_SEARCH_RESULTS_NUMBER = 12
-const LOAD_MORE_SEARCH_RESULTS_NUMBER = 6
+import { DEFAULT_SEARCH_RESULTS_NUMBER, LOAD_MORE_SEARCH_RESULTS_NUMBER } from './constants/search.js'
 
 function Cards(props) {
   var cards = []
@@ -77,7 +76,7 @@ function SearchResults({ defaultGatway }) {
     }
   }, [searchTerm, add])
 
-  const search_results = searchResults(searchTerm, dwebData['sites'])
+  const search_results = searchResultsUtils(searchTerm, dwebData['sites'])
 
   let resultsShown = Math.min(Math.max(DEFAULT_SEARCH_RESULTS_NUMBER, currentResultsShown), search_results.length)
   if (resultsShown !== currentResultsShown) {

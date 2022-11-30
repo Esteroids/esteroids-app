@@ -3,16 +3,6 @@ import { create } from 'ipfs-http-client'
 
 let ipfs = null
 
-/*
- * A quick demo using React hooks to create an ipfs instance.
- *
- * Hooks are brand new at the time of writing, and this pattern
- * is intended to show it is possible. I don't know if it is wise.
- *
- * Next steps would be to store the ipfs instance on the context
- * so use-ipfs calls can grab it from there rather than expecting
- * it to be passed in.
- */
 export default function useIpfsFactory(ipfsHttpNode) {
   const [isIpfsReady, setIpfsReady] = useState(Boolean(ipfs))
   const [ipfsInitError, setIpfsInitError] = useState(null)

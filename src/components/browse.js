@@ -3,18 +3,17 @@ import React from 'react'
 import Cards from './Cards/Cards.js'
 import CategoryTags from './tags/CategoryTags.js'
 import RegularTags from './tags/RegularTags.js'
-import { searchResults } from './search/Search.js'
+import { searchResultsUtils } from './search/Search.js'
 import { TAG_SEARCH_TERMS } from './constants/tags.js'
-
-const DEFAULT_NUMBER_OF_CARDS = 12
-const LOAD_MORE_CARDS = 12
+import { DEFAULT_NUMBER_OF_CARDS, LOAD_MORE_CARDS } from './constants/browse.js'
+import ShowMoreBtn from './browse/ShowMoreBtn.js'
 
 function getTagDwebsites(tag, allDwebsite) {
-  let websites = searchResults(tag, allDwebsite)
+  let websites = searchResultsUtils(tag, allDwebsite)
   const otherSearchTerms = TAG_SEARCH_TERMS[tag]
   if (otherSearchTerms) {
     for (const searchTerm of otherSearchTerms) {
-      websites.concat(searchResults(searchTerm, allDwebsite))
+      websites.concat(searchResultsUtils(searchTerm, allDwebsite))
     }
     websites = [...new Set(websites)]
   }
@@ -96,13 +95,8 @@ class Browse extends React.Component {
           cards_number={this.state.cards_number}
           defaultGatway={this.props.defaultGatway}
         />
-        {showLoadMore && (
-          <div className='text-center load-more-div'>
-            <button type='button' onClick={this.onLoadMore} className='btn btn-outline-secondary load-more-btn'>
-              Load More
-            </button>
-          </div>
-        )}
+
+        <ShowMoreBtn show={showLoadMore} handleLoadModeClick={this.onLoadMore} />
       </div>
     )
   }

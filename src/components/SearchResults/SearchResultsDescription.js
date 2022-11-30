@@ -7,7 +7,7 @@ function SearchResultsDescription(props) {
   } else {
     return (
       <div className='search-results'>
-        Returned <strong>{props.totalResults}</strong> results:{' '}
+        Returned <strong>{props.totalResults}</strong> result{props.totalResults !== 1 ? 's' : ''}:{' '}
         <strong>
           <span className='fst-italic'>{props.searchTerm}</span>
         </strong>

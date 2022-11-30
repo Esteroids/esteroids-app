@@ -477,7 +477,6 @@ body[data-theme='dark'] {
     color: white; 
     border-radius: 6px; 
     border: 6px solid #00b392; 
-    radius: 6px;
 }
 
 
@@ -610,7 +609,7 @@ button.close {
     padding: 0;
     background-color: transparent;
     border: 0;
-    -webkit-appearance: none;
+
 }
 
 
