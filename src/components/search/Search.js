@@ -39,7 +39,7 @@ const filterResults = (searchTerm, sites) => {
 
 const cleanSearchTerm = (searchTerm) => searchTerm.trim()
 
-const searchResults = (searchTermRaw, sites) => {
+const searchResultsUtils = (searchTermRaw, sites) => {
   const searchTerm = cleanSearchTerm(searchTermRaw)
   const searchType = getSearchType(searchTerm)
   let results
@@ -60,4 +60,4 @@ const searchResults = (searchTermRaw, sites) => {
   return results
 }
 
-export { searchResults }
+export { searchResultsUtils }

@@ -488,7 +488,6 @@ body[data-theme='dark'] {
     color: white; 
     border-radius: 6px; 
     border: 6px solid #00b392; 
-    radius: 6px;
 }
 
 
@@ -625,7 +624,7 @@ button.close {
     padding: 0;
     background-color: transparent;
     border: 0;
-    -webkit-appearance: none;
+
 }
 
 
@@ -800,4 +799,34 @@ button.close {
     white-space: nowrap;
     overflow-x: auto;     
     -webkit-overflow-scrolling: touch;
+}
+
+
+/* .tweeter-meme{
+    background: url("../images/tweet_meme/meme-template.jpg");
+    background-size:"cover";
+    background-position:"center";
+    background-repeat: no-repeat;
+    width: 1200px;
+    height: 676px;
+    position: relative;
+} */
+
+.site-search{
+
+    font-size: 48px;
+    font-weight: 500;
+    position: absolute;
+    left: 280px;
+    top: 170px;
+}
+
+.site-search-results{
+
+    font-size: 36px;
+    font-weight: 500;
+    font-style: italic;
+    position: absolute;
+    left: 600px;
+    top: 260px;
 }
