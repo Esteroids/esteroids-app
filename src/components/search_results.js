@@ -6,6 +6,8 @@ import { searchResultsUtils } from './search/Search.js'
 import { Helmet } from 'react-helmet'
 import titleHandler from '../utils/page_title'
 import { useAnalyticsContext } from './contexts/Analytics.js'
+import MainLayout from './MainLayout/MainLayout'
+import ScrollToTop from './scroll_to_top'
 
 import SearchWNFTPlacement from './wnft/SearchWNFTPlacement.js'
 import SearchResultsDescription from './SearchResults/SearchResultsDescription.js'
@@ -62,28 +64,28 @@ const LoadMore = ({ totalResults, currentResultsShown, setCurrentResultsShown })
   }
 }
 
-function SearchResults({ defaultGatway }) {
+function SearchResults({ defaultGatway, searchTerm, setSearchTerm }) {
   const [currentResultsShown, setCurrentResultsShown] = useState(DEFAULT_SEARCH_RESULTS_NUMBER)
   let location = useLocation()
-  let searchTerm = new URLSearchParams(location.search).get('term')
+  let searchTermParam = new URLSearchParams(location.search).get('term')
   const add = useAnalyticsContext()
 
   useEffect(() => {
-    if (searchTerm) {
+    if (searchTermParam) {
       const eType = 'search'
-      const meta = { searchTerm, host: window.location && window.location.host }
+      const meta = { searchTerm: searchTermParam, host: window.location && window.location.host }
       add({ eType, meta })
     }
-  }, [searchTerm, add])
+  }, [searchTermParam, add])
 
-  const search_results = searchResultsUtils(searchTerm, dwebData['sites'])
+  const search_results = searchResultsUtils(searchTermParam, dwebData['sites'])
 
   let resultsShown = Math.min(Math.max(DEFAULT_SEARCH_RESULTS_NUMBER, currentResultsShown), search_results.length)
   if (resultsShown !== currentResultsShown) {
     setCurrentResultsShown(resultsShown)
   }
 
-  let newTitle = titleHandler.getSearchTitle(searchTerm)
+  let newTitle = titleHandler.getSearchTitle(searchTermParam)
   const pageHeaderTitle = (
     <Helmet>
       <title>{newTitle}</title>
@@ -93,17 +95,20 @@ function SearchResults({ defaultGatway }) {
   )
 
   return (
-    <div className='container'>
-      {pageHeaderTitle}
-      <SearchResultsDescription totalResults={search_results.length} searchTerm={searchTerm} />
-      <Cards
-        searchTerm={searchTerm}
-        searchResults={search_results}
-        currentResultsShown={currentResultsShown}
-        defaultGatway={defaultGatway}
-        setCurrentResultsShown={setCurrentResultsShown}
-      />
-    </div>
+    <MainLayout searchTerm={searchTerm} setSearchTerm={setSearchTerm}>
+      <ScrollToTop location={location} />
+      <div className='container'>
+        {pageHeaderTitle}
+        <SearchResultsDescription totalResults={search_results.length} searchTerm={searchTermParam} />
+        <Cards
+          searchTerm={searchTermParam}
+          searchResults={search_results}
+          currentResultsShown={currentResultsShown}
+          defaultGatway={defaultGatway}
+          setCurrentResultsShown={setCurrentResultsShown}
+        />
+      </div>
+    </MainLayout>
   )
 }
 
