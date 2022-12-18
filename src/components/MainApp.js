@@ -9,7 +9,6 @@ import Svgs from './Svgs/Svgs'
 import { useAnalyticsContext } from './contexts/Analytics'
 import EnsSite from '../utils/ens_sites'
 import { MAIN_PAGE_ROUTES } from './constants/routes'
-import TweetMeme from './TweetMeme'
 
 const MainApp = () => {
   const location = useLocation()
@@ -43,9 +42,6 @@ const MainApp = () => {
         </Route>
         <Route path='/about'>
           <About searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-        </Route>
-        <Route path='/tweet-meme'>
-          <TweetMeme searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
         </Route>
       </Switch>
 

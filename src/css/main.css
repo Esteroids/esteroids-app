@@ -802,7 +802,7 @@ button.close {
 }
 
 
-.tweeter-meme{
+/* .tweeter-meme{
     background: url("../images/tweet_meme/meme-template.jpg");
     background-size:"cover";
     background-position:"center";
@@ -810,7 +810,7 @@ button.close {
     width: 1200px;
     height: 676px;
     position: relative;
-}
+} */
 
 .site-search{
 
