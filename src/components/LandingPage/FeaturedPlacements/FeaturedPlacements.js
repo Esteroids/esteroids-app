@@ -1,9 +1,9 @@
-import GitcoinCampaign from './GitcoinCampaign'
+//import GitcoinCampaign from './GitcoinCampaign'
 // import DwebsitesBot from './DwebsitesBot'
 // import DwebServicesPlacement from './DwebServices'
 import HappyHolidays from './HappyHolidays'
 
-const FEATURED_PLACEMENTS = [GitcoinCampaign, HappyHolidays]
+const FEATURED_PLACEMENTS = [HappyHolidays]
 
 const SHOW_STRATEGY = 'random'
 

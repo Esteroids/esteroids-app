@@ -7918,11 +7918,6 @@ html-minifier-terser@^5.0.1:
     relateurl "^0.2.7"
     terser "^4.6.3"
 
-html-to-image@^1.11.1:
-  version "1.11.1"
-  resolved "https://registry.yarnpkg.com/html-to-image/-/html-to-image-1.11.1.tgz#58d6e0ce609d78e40023e6ff48b3d512f93fff73"
-  integrity sha512-W6ZXctQQfhFA2tCcDbK1jCywwT9Oo1ucyXwlxku3zHacyhLPeMhs+h2OLBNeoYrPSgzgeOqhhSs+MbEmL2fDLw==
-
 html-webpack-plugin@4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/html-webpack-plugin/-/html-webpack-plugin-4.5.0.tgz#625097650886b97ea5dae331c320e3238f6c121c"

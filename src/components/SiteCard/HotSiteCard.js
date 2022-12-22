@@ -24,12 +24,12 @@ const HotSiteCardImg = (props) => {
 
   return (
     <LazyLoad
-      height={120}
-      placeholder={<ImagePlaceholder className='card-img card-img-hotsite' width={120} height={120} />}
+      className={'card-hot-wrapper'}
+      placeholder={<ImagePlaceholder className='card-img card-img-hotsite' width={175} height={175} />}
       once
     >
       {screenshotExists && <img className={'card-img card-img-hotsite'} src={props.screenshotUrl} alt='' />}
-      {!screenshotExists && <ImagePlaceholder className={'card-img card-img-hotsite'} width={120} height={120} />}
+      {!screenshotExists && <ImagePlaceholder className={'card-img card-img-hotsite'} width={175} height={175} />}
     </LazyLoad>
   )
 }

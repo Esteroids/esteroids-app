@@ -766,6 +766,13 @@ button.close {
 
 .card-th-wrapper {
     padding: 0px 78px;
+    min-height: 120px;
+    min-width: 120px;
+}
+
+.card-hot-wrapper{
+    min-height: 175px;
+    min-width: 403px;
 }
 
 .cards{
