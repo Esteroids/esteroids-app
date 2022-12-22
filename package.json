@@ -68,7 +68,7 @@
     "prettier": "^2.7.1",
     "source-map-explorer": "^2.5.2"
   },
-  "engines" : { 
-    "node" : ">=16.0.0 "
+  "engines": {
+    "node": ">=16.0.0 "
   }
 }
