@@ -9,7 +9,6 @@ import Svgs from './Svgs/Svgs'
 import { useAnalyticsContext } from './contexts/Analytics'
 import EnsSite from '../utils/ens_sites'
 import { MAIN_PAGE_ROUTES } from './constants/routes'
-import Snowfall from 'react-snowfall'
 
 const MainApp = () => {
   const location = useLocation()
@@ -30,7 +29,6 @@ const MainApp = () => {
   return (
     <>
       <Svgs />
-      <Snowfall speed={[1.0, 2.5]} wind={[-0.5, 1]} radius={[0.5, 5.5]} />
       <Switch>
         <Route exact path={MAIN_PAGE_ROUTES}>
           <LandingPage defaultGatway={defaultGatway} />
