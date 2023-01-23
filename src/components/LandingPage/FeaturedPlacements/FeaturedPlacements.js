@@ -1,8 +1,8 @@
 import GitcoinCampaign from './GitcoinCampaign'
-import DwebsitesBot from './DwebsitesBot'
-import DwebServicesPlacement from './DwebServices'
+// import DwebsitesBot from './DwebsitesBot'
+// import DwebServicesPlacement from './DwebServices'
 
-const FEATURED_PLACEMENTS = [GitcoinCampaign, DwebsitesBot, DwebServicesPlacement]
+const FEATURED_PLACEMENTS = [GitcoinCampaign]
 
 const SHOW_STRATEGY = 'random'
 
