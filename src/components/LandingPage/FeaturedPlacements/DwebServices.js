@@ -6,7 +6,7 @@ const DwebServicesPlacement = (props) => {
   return (
     <div className='WotW'>
       <a className='WotW-link' href='https://dwebservices.xyz'>
-        <img className='mw-100' src={placementImgUrl} alt='dWebServices' />
+        <img className='w-100' src={placementImgUrl} alt='dWebServices' />
       </a>
     </div>
   )

@@ -831,14 +831,10 @@ button.close {
     min-width: 120px;
 }
 
-.card-hot-wrapper {
-    min-height: 175px;
-    /* min-width: 290px; */
-}
-
-
-
-
+/* .card-hot-wrapper {
+    /* min-height: 175px; */
+/* min-width: 290px; 
+}*/
 
 .expanded-container {
     position: relative;
