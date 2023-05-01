@@ -15,7 +15,7 @@ const Cards = (props) => {
     )
   }
 
-  return <div className='cards row w-100 d-flex p-0'>{cards}</div>
+  return <div className='cards d-flex p-0'>{cards}</div>
 }
 
 export default Cards

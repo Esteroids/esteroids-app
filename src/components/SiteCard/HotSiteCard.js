@@ -41,7 +41,7 @@ const HotSiteCard = (props) => {
   const screenshotUrl = getScreenshotUrl(site)
 
   return (
-    <div className={'col-lg-4 col-sm-6 d-flex'}>
+    <div className={'col-lg-4 col-sm-6 d-flex justify-content-center px-2'}>
       <a
         href={props.siteLink}
         onClick={props.goToPage}

@@ -28,7 +28,7 @@ function Cards(props) {
   }
 
   return (
-    <div>
+    <div className='d-flex justify-content-center'>
       <div className='row cards row w-100 d-flex p-0'>
         <div className='col-md-9'>
           <div className='row'>{cards}</div>

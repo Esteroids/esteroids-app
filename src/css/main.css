@@ -805,10 +805,10 @@ button.close {
 .cards [class*=col-] {
     position: relative;
     float: left;
-    padding-left: 35px;
+    /* padding-left: 35px; */
     padding-bottom: 35px;
     box-sizing: border-box;
-    padding-right: 0px;
+    /* padding-right: 0px; */
 }
 
 .card-th-wrapper {
@@ -819,30 +819,37 @@ button.close {
 
 .card-hot-wrapper {
     min-height: 175px;
-    min-width: 403px;
+    min-width: 290px;
 }
 
-@media (max-width: 500px) {
-    .card-hot-wrapper {
 
-        min-width: 290px;
-    }
-}
 
 .cards {
     clear: both;
     /* margin-left: -35px; */
     transition: padding .6s ease-in-out;
+    flex-wrap: wrap;
 }
 
 .expanded-container {
     position: relative;
-    width: 1452px;
+
     max-width: 100%;
     margin: 0 auto;
-    padding-left: 66px;
-    padding-right: 66px;
+    /* padding-left: 66px;
+    padding-right: 66px; */
     clear: both;
+}
+
+.justify-content-center {
+    justify-content: center !important;
+}
+
+
+@media (min-width: 1452px) {
+    .expanded-container {
+        width: 1452px;
+    }
 }
 
 @media (max-width: 1452px) {
