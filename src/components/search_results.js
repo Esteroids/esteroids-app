@@ -97,7 +97,7 @@ function SearchResults({ defaultGatway, searchTerm, setSearchTerm }) {
   return (
     <MainLayout searchTerm={searchTerm} setSearchTerm={setSearchTerm}>
       <ScrollToTop location={location} />
-      <div className='container'>
+      <div className='expanded-container'>
         {pageHeaderTitle}
         <SearchResultsDescription totalResults={search_results.length} searchTerm={searchTermParam} />
         <Cards
