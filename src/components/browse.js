@@ -82,11 +82,9 @@ class Browse extends React.Component {
 
     return (
       <div className='expanded-container' id='browse_sites'>
-        <div className='row'>
-          <div className='col-sm-12 category-navbar'>
-            <CategoryTags category={this.props.category} />
-            <RegularTags category={this.props.category} />
-          </div>
+        <div className='col-sm-12 category-navbar'>
+          <CategoryTags category={this.props.category} />
+          <RegularTags category={this.props.category} />
         </div>
 
         <Cards

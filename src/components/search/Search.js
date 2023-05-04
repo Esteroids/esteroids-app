@@ -1,4 +1,4 @@
-import getSearchRank from '../../utils/search_rank'
+import { getSearchRank, stemAndCleanTerm, getMultiWords } from '../../utils/search_rank'
 import { searchByNameLength, isNameLengthSearch } from './SearchByNameLen'
 import { searchByEthName, isEthNameSearch } from './SearchByEthName'
 
@@ -19,9 +19,13 @@ const getSearchType = (searchTerm) => {
 }
 
 const filterResults = (searchTerm, sites) => {
+  const stemSearchTerm = stemAndCleanTerm(searchTerm)
+  const multiWords = getMultiWords(searchTerm)
   let all_sites_search_rankings = sites.map((x, index) => {
-    return { rank: getSearchRank(x, searchTerm), index: index }
+    return { rank: getSearchRank(x, stemSearchTerm, multiWords), index: index }
   })
+
+  console.log(all_sites_search_rankings)
 
   //filter 0 rank (no matches)
   let positive_search_ranks = all_sites_search_rankings.filter(function (site_rank) {

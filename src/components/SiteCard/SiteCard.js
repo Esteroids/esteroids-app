@@ -29,7 +29,7 @@ const getAddress = (site) => {
 
 const getColumnSize = (location) => {
   if (location === 'search_results') return 'col-xl-4 col-lg-6 col-md-6'
-  else return 'col-xl-3 col-lg-4 col-sm-6'
+  else return 'col-xl-3 col-lg-4 col-sm-6 justify-content-center flex-fill'
 }
 
 const SiteCard = (props) => {

@@ -28,7 +28,7 @@ function Cards(props) {
   }
 
   return (
-    <div>
+    <div className='d-flex justify-content-center'>
       <div className='row cards row w-100 d-flex p-0'>
         <div className='col-md-9'>
           <div className='row'>{cards}</div>
@@ -97,7 +97,7 @@ function SearchResults({ defaultGatway, searchTerm, setSearchTerm }) {
   return (
     <MainLayout searchTerm={searchTerm} setSearchTerm={setSearchTerm}>
       <ScrollToTop location={location} />
-      <div className='container'>
+      <div className='expanded-container'>
         {pageHeaderTitle}
         <SearchResultsDescription totalResults={search_results.length} searchTerm={searchTermParam} />
         <Cards
