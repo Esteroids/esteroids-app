@@ -4,7 +4,7 @@ import Header from '../header/Header'
 const MainLayout = ({ children, searchTerm, setSearchTerm }) => {
   return (
     <span>
-      <div className='container'>
+      <div className='expanded-container'>
         <Header searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       </div>
       {children}

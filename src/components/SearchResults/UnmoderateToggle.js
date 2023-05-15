@@ -1,6 +1,6 @@
 
-import shieldSVG from '../..//images/svg/shield.svg'
-import unshieldSVG from '../..//images/svg/unshield.svg'
+import shieldSVG from '../../images/svg/shield.svg'
+import unshieldSVG from '../../images/svg/unshield.svg'
 
 const UnmoderateToggle = () => {
 
