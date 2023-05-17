@@ -5,7 +5,7 @@ import unshieldSVG from '../../images/svg/unshield.svg'
 const UnmoderateToggle = () => {
 
   return (
-    <span className='wrapper ml-2 d-inline-flex h-18w-70'>
+    <span className='wrapper wrapper-toggle-unmoderated ml-2 d-inline-flex h-18w-70'>
       <label className='switch unmoderated'>
         <input
           type='checkbox'

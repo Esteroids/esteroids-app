@@ -767,9 +767,15 @@ button.close {
     left: 50%;
     top: 60%;
     transform: translate(-50%, -50%);
-    width: 66px;
+    width: 58px;
     height: 30px;
   }
+
+  .wrapper-toggle-unmoderated {
+    position: relative;
+    width: 80px;
+    height: 15px;
+}
 
   .wrapper .switch .unmoderated-slider {
     border: 1px solid #828282;
@@ -789,11 +795,11 @@ button.close {
   }
 
   .wrapper .switch input:checked + .unmoderated-slider:before {
-    transform: translateX(27px);
+    transform: translateX(24px);
     background-color: #c81f1f;
   }
   .wrapper .switch input:checked + .unmoderated-slider:after {
-    transform: translateX(27px);
+    transform: translateX(24px);
     background-color: #c81f1f;
   }
 
