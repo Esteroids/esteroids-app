@@ -44,7 +44,7 @@ function NavBarSecondaryPage(props) {
           <div className='input-group'>
             <input
               type='text'
-              className='form-control searchbox'
+              className='form-control searchbox ps-2'
               placeholder='Search dWebsites'
               value={props.searchTerm}
               onChange={(event) => {

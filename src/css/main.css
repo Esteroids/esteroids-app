@@ -178,7 +178,7 @@ body[data-theme='dark'] {
     border-bottom-left-radius: 0px;
     border-top-right-radius: 6px;
     border-bottom-right-radius: 6px;
-    border: 1px solid green;
+    border: 1px solid rgb(18, 0, 130);
     border-left: 0;
     background-color: #120082;
 }
