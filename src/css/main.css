@@ -166,7 +166,7 @@ body[data-theme='dark'] {
     box-shadow: 0px 23px 65px -14px rgba(0, 48, 123, 0.21);
     border-top-left-radius: 6px;
     border-bottom-left-radius: 6px;
-    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
     border-bottom-right-radius: 0;
     border-right: 0;
     font-size: 1.4rem;
@@ -174,8 +174,8 @@ body[data-theme='dark'] {
 }
 
 .search-button {
-    border-top-left-radius: 6px;
-    border-bottom-left-radius: 6px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
     border-top-right-radius: 6px;
     border-bottom-right-radius: 6px;
     border: 1px solid green;
@@ -790,7 +790,7 @@ button.close {
     left: 4px;
     /* bottom: 5px; */
     border-radius: 24px;
-    background-color: bbc4bb;
+    background-color: #999999ff;
     opacity: 1;
   }
 
