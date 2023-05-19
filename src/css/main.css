@@ -722,6 +722,7 @@ button.close {
     border-radius: 30px;
     z-index: 100;
     overflow: hidden;
+    background-color: rgb(243 247 255);
 }
 
 .wrapper .switch .slider:before,
@@ -779,6 +780,7 @@ button.close {
 
   .wrapper .switch .unmoderated-slider {
     border: 1px solid #828282;
+    background-color: transparent;
   }
 
   .wrapper .switch .unmoderated-slider:before,

@@ -1,5 +1,5 @@
 import Version from './Version'
-import LandingPageImg from '../../images/esteroids_3_logos.png'
+import Esteroids3Logos from '../../images/esteroids_3_logos.png'
 import MainLayout from '../MainLayout/MainLayout'
 
 function About({ searchTerm, setSearchTerm }) {
@@ -120,7 +120,7 @@ function About({ searchTerm, setSearchTerm }) {
           </div>{' '}
           {/* col-md-6 */}
           <div className='col-md-6 text-center d-none d-sm-block'>
-            <img src={LandingPageImg} alt='The logo of Esteroids in three different colors' />
+            <img src={Esteroids3Logos} alt='The logo of Esteroids in three different colors' />
           </div>{' '}
           {/* col-md-6 */}
         </div>{' '}

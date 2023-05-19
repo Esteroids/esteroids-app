@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom'
 
+import logoName from '../images/svg/logo_name.svg'
+
 function BlueArrowLeft() {
   return (
     <svg width='7' height='17' version='2.0' fill='currentColor'>
@@ -61,9 +63,7 @@ function Footer() {
           </div>
           <div className='footer-items d-none d-lg-block'>
             <Link to='/'>
-              <svg width='161' height='30' version='2.0' alt='Esteroids logo'>
-                <use href='#esteroids-logo' />
-              </svg>
+              <img alt='Esteroids logo' src={logoName}/>
             </Link>
           </div>
           <div className='footer-items d-none d-lg-block'>

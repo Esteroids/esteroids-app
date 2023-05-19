@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import React, { useState } from 'react'
 import ThemeToggle from '../Theme/ThemeToggle'
 import Web3Button from './ConnectButton'
+import Logo from './Logo'
 import { MAIN_NAV_BAR_ITEMS, MAIN_NAV_BAR_SOCIAL_ITEMS } from '../constants/navbar'
 
 function NavBarItemMainPage(props) {
@@ -24,17 +25,8 @@ function NavBarItemMainPage(props) {
 function NavBarMainPage() {
   const [menuOpen, setMenuOpen] = useState(false)
   return (
-    <nav className='navbar navbar-expand-xl flex-grow-0'>
-      <Link to={'/'} className=' d-none d-xl-block'>
-        <svg className='navbar-brand' width='161' height='44' version='2.0' alt='Esteroids logo'>
-          <use href='#esteroids-logo' />
-        </svg>
-      </Link>
-      <Link to={'/'} className='  d-xl-none d-xxl-none'>
-        <svg className='d-xl-none d-xxl-none ' height='44' width='44' version='2.0' alt='Esteroids logo'>
-          <use href='#esteroids' />
-        </svg>
-      </Link>
+    <nav className='navbar navbar-expand-xl'>
+      <Logo />
       <ThemeToggle />
       <button
         className='ml-auto mx-2 navbar-toggler navbar-toggler-right collapsed'
