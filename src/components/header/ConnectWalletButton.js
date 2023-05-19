@@ -10,7 +10,7 @@ const DisconnectButton = () => {
   }
 
   return (
-    <button type='button' className='btn-connect btn align-self-end btn-info' onClick={clickAction}>
+    <button type='button' className='btn-connect btn align-self-end btn-info rounded-pill' onClick={clickAction}>
       <strong>Disconnect</strong>
     </button>
   )
@@ -42,7 +42,7 @@ const ConnectButton = () => {
       <div data-tip='' data-for='main-error' ref={errorTooltipRef} delay-hide='2000'>
         <button
           type='button'
-          className='btn-connect btn align-self-end btn-success'
+          className='btn-connect btn align-self-end btn-secondary rounded-pill'
           onClick={onClickAction}
           data-tip={tooltipText}
           data-multiline={true}
@@ -78,7 +78,7 @@ const ConnectButton = () => {
   )
 }
 
-const Web3Button = () => {
+const ConnectWalletButton = () => {
   const { isConnected } = useWeb3Context()
   if (isConnected) {
     return <DisconnectButton />
@@ -87,4 +87,4 @@ const Web3Button = () => {
   }
 }
 
-export default Web3Button
+export default ConnectWalletButton

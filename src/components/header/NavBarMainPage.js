@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import React, { useState } from 'react'
 import ThemeToggle from '../Theme/ThemeToggle'
-import Web3Button from './ConnectButton'
+import ConnectWalletButton from './ConnectWalletButton'
 import Logo from './Logo'
 import { MAIN_NAV_BAR_ITEMS, MAIN_NAV_BAR_SOCIAL_ITEMS } from '../constants/navbar'
 
@@ -65,7 +65,7 @@ function NavBarMainPage() {
       </div>{' '}
       {/*-- navb */}
       <div>
-        <Web3Button />
+        <ConnectWalletButton />
       </div>
     </nav>
   )

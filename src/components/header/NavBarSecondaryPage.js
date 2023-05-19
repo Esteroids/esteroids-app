@@ -1,7 +1,7 @@
 import { useHistory } from 'react-router-dom'
 
 import ThemeToggle from '../Theme/ThemeToggle'
-import Web3Button from './ConnectButton'
+import ConnectWalletButton from './ConnectWalletButton'
 import Logo from './Logo'
 
 function NavBarSecondaryPage(props) {
@@ -51,7 +51,7 @@ function NavBarSecondaryPage(props) {
         </form>
       </div>
       <div className='ms-auto'>
-        <Web3Button />
+        <ConnectWalletButton />
       </div>
     </nav>
   )
