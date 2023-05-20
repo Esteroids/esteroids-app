@@ -5,7 +5,7 @@ const ThemeToggle = () => {
   const darkTheme = useDarkThemeContext()
 
   return (
-    <div className='wrapper d-flex'>
+    <div className='wrapper d-flex mx-2'>
       <label className='switch'>
         <input
           type='checkbox'

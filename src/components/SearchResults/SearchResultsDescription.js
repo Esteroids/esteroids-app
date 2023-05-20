@@ -12,19 +12,20 @@ function SearchResultsDescription(props) {
   } else {
     return (
       <div className='search-results d-flex'>
-        <div className="p-2">
-          Returned <strong>{props.totalResults}</strong> result{props.totalResults !== 1 ? 's' : ''}:{' '}
+        <div className="p-3">
+          <strong>{props.totalResults}</strong> result{props.totalResults !== 1 ? 's' : ''} for {' '}
           <strong>
             <span className='fst-italic'>{props.searchTerm}</span>
           </strong>
           </div>
           <div className="ml-auto p-2">
             <UnmoderateToggle/>
+
             <a data-tip data-for='happyFace'> <img src={questionMark}/> </a>
             <ReactTooltip id='happyFace'>
-            <p>Switches between moderated and unmoderated search results. </p> 
-            <p> Unmoderated search contain more results but may be less safe.</p>
-          </ReactTooltip>
+              <p>Switches between moderated and unmoderated search results. </p> 
+              <p> Unmoderated search contain more results but may be less safe.</p>
+            </ReactTooltip> 
           </div>
       </div>
     )

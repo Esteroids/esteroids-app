@@ -21,11 +21,10 @@ function NavBarSecondaryPage(props) {
   }
 
   return (
-    <nav className='navbar navbar-expand-xl h-100 navbar-secondary d-flex flex-row align-items-center justify-content-center justify-content-md-start'>
+    <nav className='navbar navbar-expand-xl h-100 navbar-secondary d-flex flex-row'>
       <Logo />
-      <ThemeToggle />
 
-      <div>
+      <div className="ps-2">
         <form id='search-bar' onSubmit={handleSearch} className='search-bar '>
           <div className='input-group'>
             <input
@@ -50,7 +49,8 @@ function NavBarSecondaryPage(props) {
           </div>
         </form>
       </div>
-      <div className='ms-auto'>
+      <div className='d-none d-xl-flex w-100 justify-content-end'>
+        <ThemeToggle />
         <ConnectWalletButton />
       </div>
     </nav>
