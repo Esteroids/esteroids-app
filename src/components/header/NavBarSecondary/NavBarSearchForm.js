@@ -1,5 +1,7 @@
 import { useHistory } from 'react-router-dom'
 
+import searchMagnifyingGlassIcon from '../../../images/svg/helpers/search_magnifying_glass.svg'
+
 function NavBarSearchForm({ searchTerm, location, setSearchTerm }) {
   let history = useHistory()
 
@@ -33,9 +35,7 @@ function NavBarSearchForm({ searchTerm, location, setSearchTerm }) {
 
         <div className='input-group-append'>
           <button type='submit' id='basic-addon2' className='input-group-text search-button'>
-            <svg version='2.0' className='search-icon' alt='Search icon'>
-              <use href='#search' />
-            </svg>
+            <img src={searchMagnifyingGlassIcon} className='search-icon' alt='Search icon' />
           </button>
         </div>
       </div>
