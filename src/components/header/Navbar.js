@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import NavBarMainPage from './NavBarMainPage'
-import NavBarSecondaryPage from './NavBarSecondaryPage'
+import NavBarMainPage from './NavBarMain'
+import NavBarSecondaryPage from './NavBarSecondary'
 import { MAIN_PAGE_ROUTES } from '../constants/routes'
 
 function Navbar(props) {
