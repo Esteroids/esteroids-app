@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import NavBarMainPage from './NavBarMainPage'
-import NavBarSecondaryPage from './NavBarSecondaryPage'
+import NavbarMainPage from './NavbarMain/NavbarMainPage'
+import NavbarSecondaryPage from './NavbarSecondary/NavbarSecondaryPage'
 import { MAIN_PAGE_ROUTES } from '../constants/routes'
 
 function Navbar(props) {
@@ -19,9 +19,9 @@ function Navbar(props) {
   }
 
   if (home) {
-    return <NavBarMainPage />
+    return <NavbarMainPage />
   } else {
-    return <NavBarSecondaryPage location={props.location} searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+    return <NavbarSecondaryPage location={props.location} searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
   }
 }
 
