@@ -1,8 +1,8 @@
 import { useHistory } from 'react-router-dom'
 
-import searchMagnifyingGlassIcon from '../../../images/svg/helpers/search_magnifying_glass.svg'
+import searchMagnifyingGlassIcon from '../../../images/svg/search_magnifying_glass.svg'
 
-function NavBarSearchForm({ searchTerm, location, setSearchTerm }) {
+function NavbarSearch({ searchTerm, location, setSearchTerm }) {
   let history = useHistory()
 
   const handleSearch = (event) => {
@@ -43,4 +43,4 @@ function NavBarSearchForm({ searchTerm, location, setSearchTerm }) {
   )
 }
 
-export default NavBarSearchForm
+export default NavbarSearch

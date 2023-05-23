@@ -2,10 +2,10 @@ import React, { useState } from 'react'
 import ThemeToggle from '../../Theme/ThemeToggle'
 import ConnectWalletButton from '../ConnectWalletButton'
 import Logo from '../Logo'
-import NavBarItems from './NavBarItems'
-import NavBarSocial from './NavBarSocial'
+import NavbarCategories from './NavbarCategories'
+import NavbarSocial from './NavbarSocial'
 
-function NavBarMainPage() {
+function NavbarMainPage() {
   const [menuOpen, setMenuOpen] = useState(false)
   return (
     <nav className='navbar navbar-expand-xl'>
@@ -25,8 +25,8 @@ function NavBarMainPage() {
       </button>
       <div id='navb' className={'navbar-collapse collapse order-3' + (menuOpen && ' show') || ''}>
         <ul className='navbar-nav ms-auto'>
-          <NavBarItems menuOpen={menuOpen} />
-          <NavBarSocial menuOpen={menuOpen} />
+          <NavbarCategories menuOpen={menuOpen} />
+          <NavbarSocial menuOpen={menuOpen} />
         </ul>
       </div>{' '}
       {/*-- navb */}
@@ -35,4 +35,4 @@ function NavBarMainPage() {
   )
 }
 
-export default NavBarMainPage
+export default NavbarMainPage

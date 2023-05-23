@@ -1,6 +1,6 @@
 import { MAIN_NAV_BAR_SOCIAL_ITEMS } from '../../constants/navbar'
 
-function NavBarSocial({ menuOpen }) {
+function NavbarSocial({ menuOpen }) {
   if (menuOpen) {
     return null
   }
@@ -25,4 +25,4 @@ function NavBarSocial({ menuOpen }) {
   )
 }
 
-export default NavBarSocial
+export default NavbarSocial

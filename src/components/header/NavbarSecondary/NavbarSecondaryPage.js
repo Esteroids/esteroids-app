@@ -1,15 +1,15 @@
 import ThemeToggle from '../../Theme/ThemeToggle'
 import ConnectWalletButton from '../ConnectWalletButton'
 import Logo from '../Logo'
-import NavBarSearchForm from './NavBarSearchForm'
+import NavbarSearch from './NavbarSearch'
 
-function NavBarSecondaryPage(props) {
+function NavbarSecondaryPage(props) {
   return (
     <nav className='navbar navbar-expand-xl h-100 navbar-secondary d-flex flex-row'>
       <Logo />
 
       <div className='ps-2'>
-        <NavBarSearchForm searchTerm={props.searchTerm} location={props.location} setSearchTerm={props.setSearchTerm} />
+        <NavbarSearch searchTerm={props.searchTerm} location={props.location} setSearchTerm={props.setSearchTerm} />
       </div>
       <div className='d-none d-xl-flex w-100 justify-content-end'>
         <ThemeToggle />
@@ -19,4 +19,4 @@ function NavBarSecondaryPage(props) {
   )
 }
 
-export default NavBarSecondaryPage
+export default NavbarSecondaryPage
