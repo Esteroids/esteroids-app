@@ -77,7 +77,8 @@ body[data-theme='dark'] {
 }
 
 .navbar .nav-link svg,
-.navbar .btn-connect svg {
+.navbar .btn-connect svg,
+.navbar .nav-link img {
     fill: var(--nav-link-color);
 }
 
