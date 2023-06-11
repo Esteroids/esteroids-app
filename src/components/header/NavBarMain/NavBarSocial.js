@@ -15,9 +15,7 @@ function NavbarSocial({ menuOpen }) {
               rel='noreferrer'
               className={'nav-link' + ((menuOpen && ' nav-link-collapsed') || '')}
             >
-              <svg width='24' height='24' version='2.0' fill='currentColor' alt={menu_item.altLabel}>
-                <use href={'#' + menu_item.svgId} />
-              </svg>
+              <img src={menu_item.icon} width='24' height='24' alt={menu_item.altLabel} />
             </a>
           </li>
         ))}
