@@ -18,7 +18,7 @@ function SearchResultsDescription(props) {
             <span className='fst-italic'>{props.searchTerm}</span>
           </strong>
           </div>
-          <div className="ml-auto p-2">
+          <div className="ml-auto py-3 px-2">
             <UnmoderateToggle/>
 
             <a data-tip data-for='happyFace'> <img src={questionMark}/> </a>

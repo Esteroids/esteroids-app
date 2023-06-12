@@ -9,6 +9,10 @@ import HotSiteCard from './HotSiteCard'
 
 import SiteCardImg from './SiteCardImg'
 
+
+
+
+
 function isFirst(check) {
   const first = check ? 'card-upper-rect-first-row-search-results' : ''
 

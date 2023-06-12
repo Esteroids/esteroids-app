@@ -13,8 +13,8 @@ const UnmoderateToggle = () => {
           readOnly={true}
         />
         <span className='slider d-flex flex-row align-items-center unmoderated-slider'>
-        <img className='ml-2' src={unshieldSVG}/>
-        <img className='ml-2' src={shieldSVG}/>
+        <img className='ml-2' src={unshieldSVG} alt="unmoderated search"/>
+        <img className='ml-2' src={shieldSVG} alt="moderated search"/>
         </span>
       </label>
     </span>
