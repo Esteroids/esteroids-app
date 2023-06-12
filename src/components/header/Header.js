@@ -1,6 +1,7 @@
 import { useLocation } from 'react-router-dom'
-import Navbar from './Navbar'
 import { Helmet } from 'react-helmet'
+
+import Navbar from './Navbar'
 import titleHandler from '../../utils/page_title'
 
 function Header() {

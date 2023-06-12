@@ -3,8 +3,8 @@ import discordIcon from '../../images/svg/social/discord.svg'
 import twitterIcon from '../../images/svg/social/twitter.svg'
 
 export const MAIN_NAV_BAR_ITEMS = [
-  { label: 'Hot', link: '/hot', id: 'nav-link-2' },
-  { label: 'New', link: '/new', id: 'nav-link-1' },
+  { label: 'Hot', link: '/hot', id: 'navbar-hot' },
+  { label: 'New', link: '/new', id: 'navbar-new' },
 ]
 
 export const MAIN_NAV_BAR_SOCIAL_ITEMS = [
