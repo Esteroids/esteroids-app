@@ -13,10 +13,7 @@ function SearchResultsDescription(props) {
     return (
       <div className='search-results d-flex'>
         <div className="p-3">
-          <strong>{props.totalResults}</strong> result{props.totalResults !== 1 ? 's' : ''} for {' '}
-          <strong>
-            <span className='fst-italic'>{props.searchTerm}</span>
-          </strong>
+          <strong>{props.totalResults}</strong> result{props.totalResults !== 1 ? 's' : ''}
           </div>
           <div className="ml-auto py-3 px-2">
             <UnmoderateToggle/>
